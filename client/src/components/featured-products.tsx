@@ -24,9 +24,9 @@ export default function FeaturedProducts() {
   return (
     <section id="products" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-800 mb-4">热门AI玩具</h2>
-          <p className="text-lg text-slate-600">发现我们最受欢迎的智能玩具产品</p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-primary mb-6">热门AI玩具</h2>
+          <p className="text-xl text-secondary max-w-2xl mx-auto">发现我们最受欢迎的智能玩具产品，每一款都融合了最新的人工智能技术，为孩子们带来前所未有的互动学习体验</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -54,11 +54,11 @@ export default function FeaturedProducts() {
                   className="w-full h-48 object-cover"
                 />
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg text-slate-800 mb-2">{product.name}</h3>
-                  <p className="text-slate-600 text-sm mb-4">{product.description}</p>
+                  <h3 className="font-semibold text-lg text-primary mb-2">{product.name}</h3>
+                  <p className="text-secondary text-sm mb-4 line-clamp-2">{product.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-blue-primary">¥{product.price}</span>
-                    <Button className="bg-blue-light text-white hover:bg-blue-primary transition-colors rounded-full text-sm">
+                    <Button className="bg-blue-primary text-white hover:bg-blue-deep transition-colors rounded-full text-sm shadow-lg">
                       立即购买
                     </Button>
                   </div>

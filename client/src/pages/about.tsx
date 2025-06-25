@@ -4,7 +4,7 @@ import { Users, Target, Heart, Lightbulb } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gray-warm">
       <Header />
       
       {/* Hero Section */}

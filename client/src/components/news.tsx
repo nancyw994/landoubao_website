@@ -34,8 +34,8 @@ export default function News() {
     <section id="news" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">新闻动态</h2>
-          <p className="text-xl text-slate-600">了解AI玩具行业最新资讯和公司动态</p>
+          <h2 className="text-4xl font-bold text-primary mb-6">新闻动态</h2>
+          <p className="text-xl text-secondary max-w-3xl mx-auto">了解AI玩具行业最新资讯和蓝豆包公司动态，掌握智能玩具发展趋势</p>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8">
@@ -69,10 +69,10 @@ export default function News() {
                     <Tag className="h-4 w-4 ml-4" />
                     <span>{article.category}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800 hover:text-blue-primary transition-colors cursor-pointer">
+                  <h3 className="text-xl font-semibold text-primary hover:text-blue-primary transition-colors cursor-pointer">
                     {article.title}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-secondary leading-relaxed">
                     {article.excerpt}
                   </p>
                   <Button variant="link" className="p-0 h-auto text-blue-primary hover:text-blue-deep font-medium">

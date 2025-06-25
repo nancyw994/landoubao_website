@@ -3,17 +3,17 @@ import { ShoppingCart, Play, Brain, Star } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="bg-gradient-to-br from-blue-soft to-white py-20">
+    <section id="home" className="bg-gradient-to-br from-blue-soft via-white to-blue-soft/30 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl font-bold text-slate-800 leading-tight">
+            <div className="space-y-6">
+              <h1 className="text-6xl font-bold text-primary leading-tight">
                 智能AI玩具<br/>
                 <span className="text-blue-primary">点亮童年梦想</span>
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                蓝豆包致力于打造最先进的AI智能玩具，为孩子们提供寓教于乐的科技体验，同时为企业提供专业的AI技术解决方案。
+              <p className="text-xl text-secondary leading-relaxed">
+                蓝豆包致力于打造最先进的AI智能玩具，融合前沿人工智能技术与儿童教育理念，为全球孩子们提供个性化、互动性强的智能成长伙伴，同时为企业客户提供专业的AI技术解决方案与创新服务。
               </p>
             </div>
             
@@ -28,18 +28,18 @@ export default function Hero() {
               </Button>
             </div>
             
-            <div className="flex items-center space-x-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-primary">500K+</div>
-                <div className="text-sm text-slate-500">满意用户</div>
+            <div className="grid grid-cols-3 gap-8 pt-6">
+              <div className="text-center p-4 bg-white/80 rounded-2xl shadow-sm">
+                <div className="text-3xl font-bold text-blue-primary mb-1">500K+</div>
+                <div className="text-sm font-medium text-secondary">满意用户</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-primary">50+</div>
-                <div className="text-sm text-slate-500">AI产品</div>
+              <div className="text-center p-4 bg-white/80 rounded-2xl shadow-sm">
+                <div className="text-3xl font-bold text-blue-primary mb-1">50+</div>
+                <div className="text-sm font-medium text-secondary">AI产品</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-primary">100+</div>
-                <div className="text-sm text-slate-500">企业伙伴</div>
+              <div className="text-center p-4 bg-white/80 rounded-2xl shadow-sm">
+                <div className="text-3xl font-bold text-blue-primary mb-1">100+</div>
+                <div className="text-sm font-medium text-secondary">企业伙伴</div>
               </div>
             </div>
           </div>

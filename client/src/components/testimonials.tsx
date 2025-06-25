@@ -22,11 +22,11 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-soft to-slate-100">
+    <section className="py-24 bg-gradient-to-br from-blue-soft to-gray-warm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">用户心声</h2>
-          <p className="text-xl text-slate-600">听听家长和企业客户对我们产品的真实反馈</p>
+          <h2 className="text-4xl font-bold text-primary mb-6">用户心声</h2>
+          <p className="text-xl text-secondary max-w-3xl mx-auto">听听家长和企业客户对我们产品的真实反馈，了解蓝豆包如何改变孩子们的学习和成长体验</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -56,14 +56,14 @@ export default function Testimonials() {
                     <Star key={index} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <p className="text-slate-600 mb-6 italic">"{testimonial.content}"</p>
+                <p className="text-secondary mb-6 italic leading-relaxed">"{testimonial.content}"</p>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-blue-light rounded-full flex items-center justify-center">
                     <span className="text-white font-medium">{testimonial.avatar}</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-800">{testimonial.name}</div>
-                    <div className="text-sm text-slate-500">{testimonial.role}</div>
+                    <div className="font-semibold text-primary">{testimonial.name}</div>
+                    <div className="text-sm text-secondary">{testimonial.role}</div>
                   </div>
                 </div>
               </Card>
