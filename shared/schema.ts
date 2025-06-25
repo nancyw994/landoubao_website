@@ -52,10 +52,15 @@ export type Testimonial = typeof testimonials.$inferSelect;
 export type InsertNewsArticle = z.infer<typeof insertNewsArticleSchema>;
 export type NewsArticle = typeof newsArticles.$inferSelect;
 
-export type User = {
-  id: number;
-  username: string;
-  password: string;
-};
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull(),
+});
 
-export type InsertUser = Omit<User, 'id'>;
+export const insertUserSchema = createInsertSchema(users).omit({
+  id: true,
+});
+
+export type InsertUser = z.infer<typeof insertUserSchema>;
+export type User = typeof users.$inferSelect;

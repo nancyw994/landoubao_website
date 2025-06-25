@@ -61,10 +61,11 @@ Located in `shared/schema.ts`:
 4. **Database**: PostgreSQL with Drizzle ORM for type-safe queries
 5. **Response**: JSON data sent back to client components
 
-### Development Storage
-- In-memory storage implementation for development (`MemStorage`)
-- Seeded with sample data for products, testimonials, and news
-- Production ready for database migration
+### Database Storage
+- PostgreSQL database with Drizzle ORM (`DatabaseStorage`)
+- Persistent data storage for products, testimonials, news, and users
+- Automatic database schema migration with `npm run db:push`
+- Seeded with sample data on first run
 
 ## External Dependencies
 
@@ -113,6 +114,7 @@ Recent Changes:
   * 新闻中心 (News) - Company news and industry updates
   * 联系我们 (Contact) - Contact information and form
 - June 25, 2025: Enhanced header with responsive mobile menu and active page indication
+- June 25, 2025: Migrated from in-memory storage to PostgreSQL database with Drizzle ORM
 
 ## User Preferences
 
