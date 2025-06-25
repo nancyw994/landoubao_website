@@ -99,10 +99,20 @@ Located in `shared/schema.ts`:
 - **Build Commands**: `npm run build` for production, `npm run dev` for development
 - **Start Command**: `npm run start` for production server
 
-## Changelog
+## Recent Changes
 
-Changelog:
-- June 25, 2025. Initial setup
+Recent Changes:
+- June 25, 2025: Initial setup with basic homepage
+- June 25, 2025: Created custom logo design for 蓝豆包 with blue gradient and orange accent
+- June 25, 2025: Implemented full navigation system with 7 main pages:
+  * 首页 (Home) - Main landing page
+  * 关于我们 (About) - Company story, values, and team
+  * 产品中心 (Products) - Product catalog with filtering
+  * 技术服务 (Services) - Enterprise AI solutions
+  * 线上商城 (Mall) - E-commerce platform
+  * 新闻中心 (News) - Company news and industry updates
+  * 联系我们 (Contact) - Contact information and form
+- June 25, 2025: Enhanced header with responsive mobile menu and active page indication
 
 ## User Preferences
 
