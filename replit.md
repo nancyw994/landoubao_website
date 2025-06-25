@@ -115,6 +115,10 @@ Recent Changes:
   * 联系我们 (Contact) - Contact information and form
 - June 25, 2025: Enhanced header with responsive mobile menu and active page indication
 - June 25, 2025: Migrated from in-memory storage to PostgreSQL database with Drizzle ORM
+- June 25, 2025: Created dedicated consumer and enterprise subpages with detailed content:
+  * /consumer - Comprehensive consumer-focused page with age groups, testimonials, and product showcase
+  * /enterprise - Enterprise solutions page with services, case studies, and technical specifications
+- June 25, 2025: Enhanced business toggle to navigate to dedicated subpages instead of just showing/hiding content
 
 ## User Preferences
 

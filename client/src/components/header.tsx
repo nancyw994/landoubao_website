@@ -5,7 +5,6 @@ import { Link, useLocation } from "wouter";
 import Logo from "@/components/logo";
 
 export default function Header() {
-  const [businessMode, setBusinessMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [location] = useLocation();
 
@@ -52,30 +51,32 @@ export default function Header() {
           {/* Business Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
             <div className="hidden sm:flex bg-slate-100 rounded-full p-1">
-              <Button
-                variant={!businessMode ? "default" : "ghost"}
-                size="sm"
-                className={`rounded-full text-sm font-medium transition-all ${
-                  !businessMode 
-                    ? "bg-blue-primary text-white hover:bg-blue-deep" 
-                    : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
-                }`}
-                onClick={() => setBusinessMode(false)}
-              >
-                消费者
-              </Button>
-              <Button
-                variant={businessMode ? "default" : "ghost"}
-                size="sm"
-                className={`rounded-full text-sm font-medium transition-all ${
-                  businessMode 
-                    ? "bg-orange-accent text-white hover:bg-orange-accent/90" 
-                    : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
-                }`}
-                onClick={() => setBusinessMode(true)}
-              >
-                企业客户
-              </Button>
+              <Link href="/consumer">
+                <Button
+                  variant={location === "/consumer" ? "default" : "ghost"}
+                  size="sm"
+                  className={`rounded-full text-sm font-medium transition-all ${
+                    location === "/consumer"
+                      ? "bg-blue-primary text-white hover:bg-blue-deep" 
+                      : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
+                  }`}
+                >
+                  消费者
+                </Button>
+              </Link>
+              <Link href="/enterprise">
+                <Button
+                  variant={location === "/enterprise" ? "default" : "ghost"}
+                  size="sm"
+                  className={`rounded-full text-sm font-medium transition-all ${
+                    location === "/enterprise"
+                      ? "bg-orange-accent text-white hover:bg-orange-accent/90" 
+                      : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
+                  }`}
+                >
+                  企业客户
+                </Button>
+              </Link>
             </div>
             <Button 
               variant="ghost" 
@@ -111,30 +112,34 @@ export default function Header() {
             {/* Mobile Business Toggle */}
             <div className="mt-4 px-4">
               <div className="flex bg-slate-100 rounded-full p-1">
-                <Button
-                  variant={!businessMode ? "default" : "ghost"}
-                  size="sm"
-                  className={`flex-1 rounded-full text-sm font-medium transition-all ${
-                    !businessMode 
-                      ? "bg-blue-primary text-white hover:bg-blue-deep" 
-                      : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
-                  }`}
-                  onClick={() => setBusinessMode(false)}
-                >
-                  消费者
-                </Button>
-                <Button
-                  variant={businessMode ? "default" : "ghost"}
-                  size="sm"
-                  className={`flex-1 rounded-full text-sm font-medium transition-all ${
-                    businessMode 
-                      ? "bg-orange-accent text-white hover:bg-orange-accent/90" 
-                      : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
-                  }`}
-                  onClick={() => setBusinessMode(true)}
-                >
-                  企业客户
-                </Button>
+                <Link href="/consumer" className="flex-1">
+                  <Button
+                    variant={location === "/consumer" ? "default" : "ghost"}
+                    size="sm"
+                    className={`w-full rounded-full text-sm font-medium transition-all ${
+                      location === "/consumer"
+                        ? "bg-blue-primary text-white hover:bg-blue-deep" 
+                        : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    消费者
+                  </Button>
+                </Link>
+                <Link href="/enterprise" className="flex-1">
+                  <Button
+                    variant={location === "/enterprise" ? "default" : "ghost"}
+                    size="sm"
+                    className={`w-full rounded-full text-sm font-medium transition-all ${
+                      location === "/enterprise"
+                        ? "bg-orange-accent text-white hover:bg-orange-accent/90" 
+                        : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    企业客户
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
