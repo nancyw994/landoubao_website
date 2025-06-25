@@ -12,6 +12,7 @@ import News from "@/pages/news";
 import Contact from "@/pages/contact";
 import Consumer from "@/pages/consumer";
 import Enterprise from "@/pages/enterprise";
+import JoinUs from "@/pages/join-us";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/consumer" component={Consumer} />
       <Route path="/enterprise" component={Enterprise} />
+      <Route path="/join-us" component={JoinUs} />
       <Route component={NotFound} />
     </Switch>
   );

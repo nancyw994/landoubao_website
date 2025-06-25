@@ -26,18 +26,18 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="container-fluid">
+        <div className="flex justify-between items-center py-fluid-md">
           {/* Logo */}
           <Link href="/">
             <Logo className="cursor-pointer" />
           </Link>
-          
-          {/* Main Navigation */}
-          <nav className="hidden lg:flex space-x-8">
+
+          {/* Main Navigation - Hidden on mobile, flex on larger screens */}
+          <nav className="hidden lg:flex gap-fluid-lg">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
-                <span className={`font-medium transition-colors pb-1 cursor-pointer ${
+                <span className={`font-medium transition-colors pb-1 cursor-pointer text-fluid-base ${
                   isActive(item.path)
                     ? "text-blue-primary border-b-2 border-blue-primary"
                     : "text-slate-600 hover:text-blue-primary"
@@ -47,17 +47,18 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          
+
           {/* Business Toggle & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-fluid-sm">
+            {/* Business toggle - responsive sizing */}
             <div className="hidden sm:flex bg-slate-100 rounded-full p-1">
               <Link href="/consumer">
                 <Button
                   variant={location === "/consumer" ? "default" : "ghost"}
                   size="sm"
-                  className={`rounded-full text-sm font-medium transition-all ${
+                  className={`rounded-full text-fluid-sm font-medium transition-all px-fluid-md py-fluid-xs ${
                     location === "/consumer"
-                      ? "bg-blue-primary text-white hover:bg-blue-deep" 
+                      ? "bg-blue-primary text-white hover:bg-blue-deep"
                       : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
                   }`}
                 >
@@ -68,9 +69,9 @@ export default function Header() {
                 <Button
                   variant={location === "/enterprise" ? "default" : "ghost"}
                   size="sm"
-                  className={`rounded-full text-sm font-medium transition-all ${
+                  className={`rounded-full text-fluid-sm font-medium transition-all px-fluid-md py-fluid-xs ${
                     location === "/enterprise"
-                      ? "bg-orange-accent text-white hover:bg-orange-accent/90" 
+                      ? "bg-orange-accent text-white hover:bg-orange-accent/90"
                       : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
                   }`}
                 >
@@ -78,25 +79,27 @@ export default function Header() {
                 </Button>
               </Link>
             </div>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="lg:hidden text-slate-600"
+
+            {/* Mobile menu button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="lg:hidden text-slate-600 p-fluid-sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
+              {mobileMenuOpen ? <X className="text-fluid-lg" /> : <Menu className="text-fluid-lg" />}
             </Button>
           </div>
         </div>
-        
-        {/* Mobile Menu */}
+
+        {/* Mobile Menu - Responsive design */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 py-4">
-            <nav className="space-y-2">
+          <div className="lg:hidden border-t border-slate-200 py-fluid-md">
+            <nav className="space-y-fluid-xs">
               {navItems.map((item) => (
                 <Link key={item.path} href={item.path}>
-                  <span 
-                    className={`block px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer ${
+                  <span
+                    className={`block px-fluid-md py-fluid-sm rounded-lg font-medium transition-colors cursor-pointer text-fluid-base ${
                       isActive(item.path)
                         ? "bg-blue-soft text-blue-primary"
                         : "text-slate-600 hover:bg-slate-50 hover:text-blue-primary"
@@ -108,17 +111,17 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-            
+
             {/* Mobile Business Toggle */}
-            <div className="mt-4 px-4">
-              <div className="flex bg-slate-100 rounded-full p-1">
+            <div className="mt-fluid-md px-fluid-md">
+              <div className="flex bg-slate-100 rounded-full p-1 gap-1">
                 <Link href="/consumer" className="flex-1">
                   <Button
                     variant={location === "/consumer" ? "default" : "ghost"}
                     size="sm"
-                    className={`w-full rounded-full text-sm font-medium transition-all ${
+                    className={`w-full rounded-full text-fluid-sm font-medium transition-all ${
                       location === "/consumer"
-                        ? "bg-blue-primary text-white hover:bg-blue-deep" 
+                        ? "bg-blue-primary text-white hover:bg-blue-deep"
                         : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
@@ -130,9 +133,9 @@ export default function Header() {
                   <Button
                     variant={location === "/enterprise" ? "default" : "ghost"}
                     size="sm"
-                    className={`w-full rounded-full text-sm font-medium transition-all ${
+                    className={`w-full rounded-full text-fluid-sm font-medium transition-all ${
                       location === "/enterprise"
-                        ? "bg-orange-accent text-white hover:bg-orange-accent/90" 
+                        ? "bg-orange-accent text-white hover:bg-orange-accent/90"
                         : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}

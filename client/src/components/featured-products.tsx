@@ -11,10 +11,10 @@ export default function FeaturedProducts() {
 
   if (error) {
     return (
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-fluid-2xl bg-white">
+        <div className="container-fluid">
           <div className="text-center">
-            <p className="text-red-500">Failed to load products. Please try again later.</p>
+            <p className="text-red-500 text-fluid-lg">Failed to load products. Please try again later.</p>
           </div>
         </div>
       </section>
@@ -22,43 +22,52 @@ export default function FeaturedProducts() {
   }
 
   return (
-    <section id="products" className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-primary mb-6">热门AI玩具</h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto">发现我们最受欢迎的智能玩具产品，每一款都融合了最新的人工智能技术，为孩子们带来前所未有的互动学习体验</p>
+    <section id="products" className="py-fluid-2xl bg-white">
+      <div className="container-fluid">
+        <div className="text-center mb-fluid-2xl">
+          <h2 className="text-fluid-4xl font-bold text-primary mb-fluid-lg">热门AI玩具</h2>
+          <p className="text-fluid-xl text-secondary max-w-prose mx-auto leading-relaxed">
+            发现我们最受欢迎的智能玩具产品，每一款都融合了最新的人工智能技术，为孩子们带来前所未有的互动学习体验
+          </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div className="grid-fluid-4 gap-fluid-lg">
           {isLoading ? (
-            // Loading skeletons
+            // Loading skeletons - responsive grid
             Array.from({ length: 4 }).map((_, index) => (
-              <Card key={index} className="overflow-hidden">
-                <Skeleton className="w-full h-48" />
-                <CardContent className="p-6">
+              <Card key={index} className="overflow-hidden card-responsive">
+                <Skeleton className="w-full aspect-video" />
+                <CardContent className="p-fluid-lg">
                   <Skeleton className="h-6 w-3/4 mb-2" />
                   <Skeleton className="h-4 w-full mb-4" />
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-fluid-sm">
                     <Skeleton className="h-8 w-16" />
-                    <Skeleton className="h-10 w-24" />
+                    <Skeleton className="h-10 flex-1 max-w-24" />
                   </div>
                 </CardContent>
               </Card>
             ))
           ) : products && products.length > 0 ? (
             products.map((product) => (
-              <Card key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-hidden">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-48 object-cover"
-                />
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg text-primary mb-2">{product.name}</h3>
-                  <p className="text-secondary text-sm mb-4 line-clamp-2">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-blue-primary">¥{product.price}</span>
-                    <Button className="bg-blue-primary text-white hover:bg-blue-deep transition-colors rounded-full text-sm shadow-lg">
+              <Card key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 overflow-hidden group">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <CardContent className="p-fluid-lg">
+                  <h3 className="font-semibold text-fluid-lg text-primary mb-fluid-sm group-hover:text-blue-primary transition-colors line-clamp-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-secondary text-fluid-sm mb-fluid-md line-clamp-3 leading-relaxed">
+                    {product.description}
+                  </p>
+                  <div className="flex justify-between items-center gap-fluid-sm">
+                    <span className="text-fluid-2xl font-bold text-blue-primary">¥{product.price}</span>
+                    <Button className="bg-blue-primary text-white hover:bg-blue-deep transition-colors rounded-full text-fluid-sm shadow-lg px-fluid-md py-fluid-sm">
                       立即购买
                     </Button>
                   </div>
@@ -66,8 +75,8 @@ export default function FeaturedProducts() {
               </Card>
             ))
           ) : (
-            <div className="col-span-full text-center py-12">
-              <p className="text-slate-500">暂无产品信息</p>
+            <div className="col-span-full text-center py-fluid-2xl">
+              <p className="text-slate-500 text-fluid-lg">暂无产品信息</p>
             </div>
           )}
         </div>
