@@ -29,37 +29,6 @@ export default function About() {
     }
   ];
 
-  const team = [
-    {
-      name: "张博士",
-      position: "创始人兼CEO",
-      background: "人工智能博士，15年AI研发经验，曾任职于谷歌AI实验室",
-      avatar: "张",
-      expertise: ["AI算法", "产品战略", "团队管理"]
-    },
-    {
-      name: "李总",
-      position: "技术总监",
-      background: "前腾讯AI实验室主任工程师，深度学习专家",
-      avatar: "李",
-      expertise: ["深度学习", "系统架构", "技术创新"]
-    },
-    {
-      name: "王女士",
-      position: "产品总监",
-      background: "儿童教育心理学专家，10年产品设计经验",
-      avatar: "王",
-      expertise: ["用户体验", "教育心理学", "产品设计"]
-    },
-    {
-      name: "陈先生",
-      position: "研发总监",
-      background: "硬件工程专家，拥有50+项技术专利",
-      avatar: "陈",
-      expertise: ["硬件设计", "嵌入式系统", "技术专利"]
-    }
-  ];
-
   const timeline = [
     {
       year: "2020",
@@ -235,61 +204,6 @@ export default function About() {
                 <p className="text-secondary text-fluid-base leading-relaxed">{value.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-fluid-3xl bg-gradient-to-br from-blue-soft to-slate-100">
-        <div className="container-fluid">
-          <div className="text-center mb-fluid-2xl">
-            <h2 className="text-fluid-3xl font-bold text-primary mb-fluid-md">核心团队</h2>
-            <p className="text-fluid-xl text-secondary max-w-prose mx-auto">汇聚顶尖人才，共创美好未来</p>
-          </div>
-
-          <div className="grid-fluid-2 gap-fluid-xl">
-            {team.map((member, index) => (
-              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-all">
-                <CardContent className="p-fluid-xl">
-                  <div className="flex items-start gap-fluid-lg">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-light to-blue-primary rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-fluid-2xl font-bold">{member.avatar}</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-fluid-xl font-semibold text-primary mb-fluid-xs">{member.name}</h3>
-                      <p className="text-blue-primary font-medium mb-fluid-sm text-fluid-base">{member.position}</p>
-                      <p className="text-secondary mb-fluid-md text-fluid-sm leading-relaxed">{member.background}</p>
-
-                      <div className="flex flex-wrap gap-fluid-xs">
-                        {member.expertise.map((skill, idx) => (
-                          <span key={idx} className="inline-block px-fluid-sm py-fluid-xs bg-blue-soft text-blue-primary text-fluid-xs rounded-full">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Join Us CTA */}
-          <div className="text-center mt-fluid-2xl">
-            <Card className="bg-gradient-to-br from-blue-primary to-blue-deep text-white max-w-2xl mx-auto">
-              <CardContent className="p-fluid-xl text-center">
-                <Users className="h-12 w-12 mx-auto mb-fluid-md" />
-                <h3 className="text-fluid-2xl font-bold mb-fluid-md">加入我们的团队</h3>
-                <p className="text-blue-100 mb-fluid-lg text-fluid-base leading-relaxed">
-                  我们正在寻找有才华、有激情的伙伴加入我们，一起创造AI玩具的未来。
-                </p>
-                <Link href="/join-us">
-                  <Button className="bg-white text-blue-primary hover:bg-blue-50 btn-responsive font-semibold">
-                    查看职位机会
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
