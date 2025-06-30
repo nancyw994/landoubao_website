@@ -29,37 +29,6 @@ export default function About() {
     }
   ];
 
-  const team = [
-    {
-      name: "张博士",
-      position: "创始人兼CEO",
-      background: "人工智能博士，15年AI研发经验，曾任职于谷歌AI实验室",
-      avatar: "张",
-      expertise: ["AI算法", "产品战略", "团队管理"]
-    },
-    {
-      name: "李总",
-      position: "技术总监",
-      background: "前腾讯AI实验室主任工程师，深度学习专家",
-      avatar: "李",
-      expertise: ["深度学习", "系统架构", "技术创新"]
-    },
-    {
-      name: "王女士",
-      position: "产品总监",
-      background: "儿童教育心理学专家，10年产品设计经验",
-      avatar: "王",
-      expertise: ["用户体验", "教育心理学", "产品设计"]
-    },
-    {
-      name: "陈先生",
-      position: "研发总监",
-      background: "硬件工程专家，拥有50+项技术专利",
-      avatar: "陈",
-      expertise: ["硬件设计", "嵌入式系统", "技术专利"]
-    }
-  ];
-
   const timeline = [
     {
       year: "2020",
@@ -240,10 +209,11 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section
 
 
 
+        
       {/* Awards & Recognition */}
       <section className="py-fluid-3xl bg-white">
         <div className="container-fluid">
