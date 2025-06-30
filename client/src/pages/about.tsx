@@ -138,6 +138,9 @@ export default function About() {
                   蓝豆包成立于2020年，由一群热爱科技和教育的工程师、设计师和教育专家共同创立。我们相信，人工智能不仅能够改变成人世界，更能为儿童的成长和学习带来革命性的变化。
                 </p>
                 <p>
+                  我们的团队由90%清华北大毕业的顶尖人才组成，他们在人工智能、儿童心理学、产品设计等领域拥有深厚的专业背景和丰富的实践经验。
+                </p>
+                <p>
                   从第一款智能陪伴机器人开始，我们就坚持以儿童的需求为中心，将最前沿的AI技术与寓教于乐的设计理念相结合，打造出既安全又充满创意的智能玩具产品。
                 </p>
                 <p>
@@ -239,60 +242,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-fluid-3xl bg-gradient-to-br from-blue-soft to-slate-100">
-        <div className="container-fluid">
-          <div className="text-center mb-fluid-2xl">
-            <h2 className="text-fluid-3xl font-bold text-primary mb-fluid-md">核心团队</h2>
-            <p className="text-fluid-xl text-secondary max-w-prose mx-auto">汇聚顶尖人才，共创美好未来</p>
-          </div>
 
-          <div className="grid-fluid-2 gap-fluid-xl">
-            {team.map((member, index) => (
-              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-all">
-                <CardContent className="p-fluid-xl">
-                  <div className="flex items-start gap-fluid-lg">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-light to-blue-primary rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-fluid-2xl font-bold">{member.avatar}</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-fluid-xl font-semibold text-primary mb-fluid-xs">{member.name}</h3>
-                      <p className="text-blue-primary font-medium mb-fluid-sm text-fluid-base">{member.position}</p>
-                      <p className="text-secondary mb-fluid-md text-fluid-sm leading-relaxed">{member.background}</p>
-
-                      <div className="flex flex-wrap gap-fluid-xs">
-                        {member.expertise.map((skill, idx) => (
-                          <span key={idx} className="inline-block px-fluid-sm py-fluid-xs bg-blue-soft text-blue-primary text-fluid-xs rounded-full">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Join Us CTA */}
-          <div className="text-center mt-fluid-2xl">
-            <Card className="bg-gradient-to-br from-blue-primary to-blue-deep text-white max-w-2xl mx-auto">
-              <CardContent className="p-fluid-xl text-center">
-                <Users className="h-12 w-12 mx-auto mb-fluid-md" />
-                <h3 className="text-fluid-2xl font-bold mb-fluid-md">加入我们的团队</h3>
-                <p className="text-blue-100 mb-fluid-lg text-fluid-base leading-relaxed">
-                  我们正在寻找有才华、有激情的伙伴加入我们，一起创造AI玩具的未来。
-                </p>
-                <Link href="/join-us">
-                  <Button className="bg-white text-blue-primary hover:bg-blue-50 btn-responsive font-semibold">
-                    查看职位机会
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Awards & Recognition */}
       <section className="py-fluid-3xl bg-white">

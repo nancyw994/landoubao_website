@@ -20,7 +20,7 @@ export default function Header() {
     { path: "/about", label: "关于我们" },
     { path: "/products", label: "产品中心" },
     { path: "/services", label: "技术服务" },
-    { path: "/mall", label: "线上商城" },
+    { path: "/join-us", label: "人才招聘" },
     { path: "/news", label: "新闻中心" },
     { path: "/contact", label: "联系我们" }
   ];
