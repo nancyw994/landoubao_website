@@ -1,8 +1,8 @@
-import { Bot, MapPin, Phone, Mail } from "lucide-react";
+import { Bot, MapPin, Phone, Mail, MessageCircle, ShoppingBag, Share2 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-white py-fluid-2xl">
+    <footer className="bg-blue-900 text-white py-fluid-2xl">
       <div className="container-fluid">
         <div className="grid-fluid gap-fluid-xl">
           {/* Company Info */}
@@ -18,23 +18,61 @@ export default function Footer() {
             </p>
             {/* Platform Icons */}
             <div className="flex gap-fluid-sm flex-wrap">
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-primary transition-colors" title="微博">
-                <span className="text-white text-fluid-xs font-bold">微博</span>
+              <a 
+                href="https://weibo.com/landoubao" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors" 
+                title="微博"
+              >
+                <Share2 className="text-white w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-primary transition-colors" title="小红书">
-                <span className="text-white text-fluid-xs font-bold">小红书</span>
+              <a 
+                href="https://xiaohongshu.com/user/profile/landoubao" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-400 transition-colors" 
+                title="小红书"
+              >
+                <span className="text-white text-xs font-bold">小红书</span>
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-primary transition-colors" title="微信">
-                <span className="text-white text-fluid-xs font-bold">微信</span>
+              <a 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert('请扫描二维码关注我们的微信公众号：蓝豆包AI玩具');
+                }}
+                className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-400 transition-colors" 
+                title="微信"
+              >
+                <MessageCircle className="text-white w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-primary transition-colors" title="淘宝">
-                <span className="text-white text-fluid-xs font-bold">淘宝</span>
+              <a 
+                href="https://shop.taobao.com/landoubao" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-400 transition-colors" 
+                title="淘宝"
+              >
+                <ShoppingBag className="text-white w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-primary transition-colors" title="京东">
-                <span className="text-white text-fluid-xs font-bold">京东</span>
+              <a 
+                href="https://mall.jd.com/index-landoubao.html" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-500 transition-colors" 
+                title="京东"
+              >
+                <ShoppingBag className="text-white w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-blue-primary transition-colors" title="抖音">
-                <span className="text-white text-fluid-xs font-bold">抖音</span>
+              <a 
+                href="https://www.douyin.com/user/landoubao" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors" 
+                title="抖音"
+              >
+                <span className="text-white text-xs font-bold">抖音</span>
               </a>
             </div>
           </div>

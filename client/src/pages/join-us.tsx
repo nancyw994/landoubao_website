@@ -233,11 +233,11 @@ export default function JoinUs() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-warm">
+    <div className="min-h-screen bg-blue-900">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-primary to-blue-deep py-fluid-3xl">
+      <section className="bg-gradient-to-br from-blue-800 to-blue-900 py-fluid-3xl">
         <div className="container-fluid">
           <div className="text-center text-white max-w-4xl mx-auto">
             <h1 className="text-fluid-5xl font-bold mb-fluid-lg">加入蓝豆包</h1>
@@ -339,9 +339,9 @@ export default function JoinUs() {
             <p className="text-fluid-xl text-secondary">找到适合你的职业发展机会</p>
           </div>
 
-          <div className="space-y-fluid-lg">
+          <div className="space-y-12">
             {filteredJobs.length > 0 ? (
-              filteredJobs.map((job) => (
+              filteredJobs.map((job, index) => (
                 <Card key={job.id} className="card-responsive hover:shadow-xl transition-all border-l-4 border-blue-primary">
                   <CardContent className="p-fluid-xl">
                     <div className="grid lg:grid-cols-3 gap-fluid-lg">

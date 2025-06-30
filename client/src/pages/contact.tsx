@@ -219,43 +219,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">常见问题</h2>
-            <p className="text-xl text-slate-600">快速找到您想要的答案</p>
-          </div>
-          
-          <div className="space-y-6">
-            {[
-              {
-                question: "如何购买蓝豆包的AI玩具产品？",
-                answer: "您可以通过我们的线上商城、官方授权经销商或联系我们的销售团队进行购买。"
-              },
-              {
-                question: "企业技术合作有什么要求？",
-                answer: "我们欢迎各种规模的企业合作，具体要求请联系我们的商务团队进行详细沟通。"
-              },
-              {
-                question: "产品质保期是多长时间？",
-                answer: "我们的产品提供1年质保服务，期间可享受免费维修和技术支持。"
-              },
-              {
-                question: "是否提供定制化服务？",
-                answer: "是的，我们为企业客户提供定制化的AI技术解决方案和产品开发服务。"
-              }
-            ].map((faq, index) => (
-              <Card key={index} className="bg-slate-50 hover:bg-white transition-colors">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2">{faq.question}</h3>
-                  <p className="text-slate-600">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
     </div>
