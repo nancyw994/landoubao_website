@@ -119,6 +119,11 @@ Recent Changes:
   * /consumer - Comprehensive consumer-focused page with age groups, testimonials, and product showcase
   * /enterprise - Enterprise solutions page with services, case studies, and technical specifications
 - June 25, 2025: Enhanced business toggle to navigate to dedicated subpages instead of just showing/hiding content
+- June 30, 2025: Successfully migrated project from Replit Agent to Replit environment
+- June 30, 2025: Replaced business toggle with language switcher (简 | 繁 | EN) in header
+- June 30, 2025: Completely restructured homepage with company story, video section, mission statement, and featured products (蓝豆包, 语音戒指)
+- June 30, 2025: Updated footer with comprehensive platform icons (微博, 小红书, 微信, 淘宝, 京东, 抖音) and legal information
+- June 30, 2025: Fixed server configuration to run on port 5000 with proper host binding for Replit environment
 
 ## User Preferences
 

@@ -6,7 +6,14 @@ import Logo from "@/components/logo";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState("简");
   const [location] = useLocation();
+
+  const languages = [
+    { code: "简", label: "简体中文" },
+    { code: "繁", label: "繁體中文" },
+    { code: "EN", label: "English" }
+  ];
 
   const navItems = [
     { path: "/", label: "首页" },
@@ -48,36 +55,26 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Business Toggle & Mobile Menu */}
+          {/* Language Switcher & Mobile Menu */}
           <div className="flex items-center gap-fluid-sm">
-            {/* Business toggle - responsive sizing */}
+            {/* Language switcher - responsive sizing */}
             <div className="hidden sm:flex bg-slate-100 rounded-full p-1">
-              <Link href="/consumer">
+              {languages.map((lang) => (
                 <Button
-                  variant={location === "/consumer" ? "default" : "ghost"}
+                  key={lang.code}
+                  variant="ghost"
                   size="sm"
                   className={`rounded-full text-fluid-sm font-medium transition-all px-fluid-md py-fluid-xs ${
-                    location === "/consumer"
+                    currentLanguage === lang.code
                       ? "bg-blue-primary text-white hover:bg-blue-deep"
                       : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
                   }`}
+                  onClick={() => setCurrentLanguage(lang.code)}
+                  title={lang.label}
                 >
-                  消费者
+                  {lang.code}
                 </Button>
-              </Link>
-              <Link href="/enterprise">
-                <Button
-                  variant={location === "/enterprise" ? "default" : "ghost"}
-                  size="sm"
-                  className={`rounded-full text-fluid-sm font-medium transition-all px-fluid-md py-fluid-xs ${
-                    location === "/enterprise"
-                      ? "bg-orange-accent text-white hover:bg-orange-accent/90"
-                      : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
-                  }`}
-                >
-                  企业客户
-                </Button>
-              </Link>
+              ))}
             </div>
 
             {/* Mobile menu button */}
@@ -112,37 +109,28 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Mobile Business Toggle */}
+            {/* Mobile Language Switcher */}
             <div className="mt-fluid-md px-fluid-md">
-              <div className="flex bg-slate-100 rounded-full p-1 gap-1">
-                <Link href="/consumer" className="flex-1">
+              <div className="flex bg-slate-100 rounded-full p-1">
+                {languages.map((lang) => (
                   <Button
-                    variant={location === "/consumer" ? "default" : "ghost"}
+                    key={lang.code}
+                    variant="ghost"
                     size="sm"
-                    className={`w-full rounded-full text-fluid-sm font-medium transition-all ${
-                      location === "/consumer"
+                    className={`flex-1 rounded-full text-fluid-sm font-medium transition-all ${
+                      currentLanguage === lang.code
                         ? "bg-blue-primary text-white hover:bg-blue-deep"
                         : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
                     }`}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => {
+                      setCurrentLanguage(lang.code);
+                      setMobileMenuOpen(false);
+                    }}
+                    title={lang.label}
                   >
-                    消费者
+                    {lang.code}
                   </Button>
-                </Link>
-                <Link href="/enterprise" className="flex-1">
-                  <Button
-                    variant={location === "/enterprise" ? "default" : "ghost"}
-                    size="sm"
-                    className={`w-full rounded-full text-fluid-sm font-medium transition-all ${
-                      location === "/enterprise"
-                        ? "bg-orange-accent text-white hover:bg-orange-accent/90"
-                        : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    企业客户
-                  </Button>
-                </Link>
+                ))}
               </div>
             </div>
           </div>
