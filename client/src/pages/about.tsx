@@ -209,11 +209,8 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section
+      </section>
 
-
-
-        
       {/* Awards & Recognition */}
       <section className="py-fluid-3xl bg-white">
         <div className="container-fluid">

@@ -1,20 +1,31 @@
+
 import { Bot } from "lucide-react";
 
 export default function Logo({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex items-center space-x-3 ${className}`}>
+    <div className={`flex items-center ${className}`}>
       <div className="relative">
-        {/* Main logo container */}
-        <div className="w-12 h-12 bg-gradient-to-br from-blue-primary via-blue-light to-blue-deep rounded-2xl flex items-center justify-center shadow-lg">
-          {/* Robot icon with custom styling */}
-          <Bot className="text-white h-6 w-6 drop-shadow-sm" />
+        {/* Blue gradient background oval */}
+        <div className="absolute -left-13 -top-5 w-36 h-24 bg-gradient-to-br from-cyan-300 via-blue-400 to-blue-600 rounded-full opacity-75 -z-10"></div>
+        {/* Logo text matching the exact image */}
+        <div className="relative z-10 text-center">
+          {/* Chinese characters with white outline */}
+          <div className="text-3xl font-black text-black leading-none mb-2"
+               style={{
+                 WebkitTextStroke: '3px white',
+                 paintOrder: 'stroke fill'
+               }}>
+            蓝豆包
+          </div>
+          {/* English text with decorative lines exactly as shown */}
+          <div className="flex items-center justify-center gap-3">
+            <div className="h-0.5 bg-black w-8"></div>
+            <span className="text-sm font-bold text-black tracking-widest">
+              BLUEPEBO
+            </span>
+            <div className="h-0.5 bg-black w-8"></div>
+          </div>
         </div>
-        {/* Small accent dot */}
-        <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-accent rounded-full border-2 border-white shadow-sm"></div>
-      </div>
-      <div className="flex flex-col">
-        <span className="text-2xl font-bold text-blue-primary tracking-tight">蓝豆包</span>
-        <span className="text-xs text-slate-500 font-medium tracking-wider">AI TOYS</span>
       </div>
     </div>
   );

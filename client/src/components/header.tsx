@@ -1,3 +1,5 @@
+// components/header.tsx
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -32,19 +34,19 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container-fluid">
-        <div className="flex justify-between items-center py-fluid-md">
+    <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
+      <div className="w-full max-w-none px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
           <Link href="/">
             <Logo className="cursor-pointer" />
           </Link>
 
-          {/* Main Navigation - Hidden on mobile, flex on larger screens */}
-          <nav className="hidden lg:flex gap-fluid-lg">
+          {/* Main Navigation */}
+          <nav className="hidden lg:flex gap-12 xl:gap-16">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
-                <span className={`font-medium transition-colors pb-1 cursor-pointer text-fluid-base ${
+                <span className={`font-medium transition-colors pb-1 cursor-pointer text-lg ${
                   isActive(item.path)
                     ? "text-blue-primary border-b-2 border-blue-primary"
                     : "text-slate-600 hover:text-blue-primary"
@@ -55,16 +57,15 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Language Switcher & Mobile Menu */}
-          <div className="flex items-center gap-fluid-sm">
-            {/* Language switcher - responsive sizing */}
+          {/* Language & Mobile Menu */}
+          <div className="flex items-center gap-3">
             <div className="hidden sm:flex bg-slate-100 rounded-full p-1">
               {languages.map((lang) => (
                 <Button
                   key={lang.code}
                   variant="ghost"
                   size="sm"
-                  className={`rounded-full text-fluid-sm font-medium transition-all px-fluid-md py-fluid-xs ${
+                  className={`rounded-full text-sm font-medium transition-all px-3 py-1 ${
                     currentLanguage === lang.code
                       ? "bg-blue-primary text-white hover:bg-blue-deep"
                       : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
@@ -77,26 +78,24 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Mobile menu button */}
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden text-slate-600 p-fluid-sm"
+              className="lg:hidden text-slate-600 p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="text-fluid-lg" /> : <Menu className="text-fluid-lg" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu - Responsive design */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 py-fluid-md">
-            <nav className="space-y-fluid-xs">
+          <div className="lg:hidden border-t border-slate-200 py-4">
+            <nav className="space-y-1">
               {navItems.map((item) => (
                 <Link key={item.path} href={item.path}>
                   <span
-                    className={`block px-fluid-md py-fluid-sm rounded-lg font-medium transition-colors cursor-pointer text-fluid-base ${
+                    className={`block px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer text-lg ${
                       isActive(item.path)
                         ? "bg-blue-soft text-blue-primary"
                         : "text-slate-600 hover:bg-slate-50 hover:text-blue-primary"
@@ -109,15 +108,14 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Mobile Language Switcher */}
-            <div className="mt-fluid-md px-fluid-md">
+            <div className="mt-4 px-4">
               <div className="flex bg-slate-100 rounded-full p-1">
                 {languages.map((lang) => (
                   <Button
                     key={lang.code}
                     variant="ghost"
                     size="sm"
-                    className={`flex-1 rounded-full text-fluid-sm font-medium transition-all ${
+                    className={`flex-1 rounded-full text-sm font-medium transition-all ${
                       currentLanguage === lang.code
                         ? "bg-blue-primary text-white hover:bg-blue-deep"
                         : "text-slate-600 hover:text-blue-primary hover:bg-transparent"

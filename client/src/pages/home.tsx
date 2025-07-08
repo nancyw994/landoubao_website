@@ -9,20 +9,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section - Full screen with slogan and photos */}
       <section className="min-h-screen flex items-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-        {/* Animated background particles */}
-        <div className="absolute inset-0 particles-bg">
-          <div className="particle particle-1"></div>
-          <div className="particle particle-2"></div>
-          <div className="particle particle-3"></div>
-          <div className="particle particle-4"></div>
-          <div className="particle particle-5"></div>
-        </div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-purple-800/30 to-transparent" />
         <div className="absolute bottom-0 left-0 w-1/2 h-2/3 bg-gradient-to-t from-blue-800/30 to-transparent" />
-        
+
         <div className="container-fluid relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Content */}
@@ -38,7 +30,7 @@ export default function Home() {
                   用最先进的人工智能技术，为每个孩子打造独一无二的智能伙伴，陪伴他们探索世界、快乐成长。
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/about">
                   <Button size="lg" className="btn-responsive bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg font-medium transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
@@ -100,7 +92,7 @@ export default function Home() {
             <div className="text-center mb-20">
               <h2 className="text-5xl font-bold text-slate-900 mb-6">关于我们</h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                蓝豆包成立于2023年，我们是一家专注于AI智能玩具的创新科技公司
+                蓝豆包成立于2021年，我们是一家专注于AI智能玩具的创新科技公司
               </p>
             </div>
 
@@ -109,7 +101,7 @@ export default function Home() {
                 <div className="space-y-6">
                   <h3 className="text-3xl font-bold text-slate-900">我们的故事</h3>
                   <p className="text-lg text-slate-600 leading-relaxed">
-                    2023年，我们在上海杨浦区长阳创谷成立了蓝豆包，一家专注于AI智能玩具的创新公司。
+                    2021年，我们在上海杨浦区长阳创谷成立了蓝豆包，一家专注于AI智能玩具的创新公司。
                     我们相信每个孩子都值得拥有最智能、最有趣的陪伴伙伴。
                   </p>
                   <p className="text-lg text-slate-600 leading-relaxed">
