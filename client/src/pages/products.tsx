@@ -56,7 +56,7 @@ export default function Products() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +84,7 @@ export default function Products() {
                 className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-primary focus:border-transparent"
               />
             </div>
-            
+
             {/* Category filters */}
             <div className="flex items-center space-x-2">
               <Filter className="text-slate-500 h-5 w-5" />
@@ -138,8 +138,8 @@ export default function Products() {
                 filteredProducts.map((product) => (
                   <Card key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-hidden group">
                     <div className="relative overflow-hidden">
-                      <img 
-                        src={product.image} 
+                      <img
+                        src={product.image}
                         alt={product.name}
                         className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -157,7 +157,7 @@ export default function Products() {
                       <p className="text-slate-600 text-sm mb-4 line-clamp-2">
                         {product.description}
                       </p>
-                      
+
                       {/* Features */}
                       <div className="mb-4">
                         <div className="flex flex-wrap gap-1">
@@ -173,10 +173,10 @@ export default function Products() {
                           )}
                         </div>
                       </div>
-                      
+
                       <div className="flex justify-between items-center">
                         <span className="text-2xl font-bold text-blue-primary">¥{product.price}</span>
-                        <Button 
+                        <Button
                           className="bg-blue-primary text-white hover:bg-blue-deep transition-colors rounded-full text-sm"
                           onClick={() => {
                             // Show product description modal or navigate to product detail
@@ -206,7 +206,7 @@ export default function Products() {
             <h2 className="text-4xl font-bold text-slate-900 mb-4">常见问题</h2>
             <p className="text-lg text-slate-600">关于我们产品的常见疑问解答</p>
           </div>
-          
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <Card key={index} className="bg-white shadow-md hover:shadow-lg transition-all">

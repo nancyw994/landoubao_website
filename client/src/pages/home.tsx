@@ -9,145 +9,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Calendar, Tag, ArrowRight, AlertCircle, RefreshCw } from "lucide-react";
 import type { NewsArticle } from "@shared/schema";
 
-// Enhanced News Component for Home Page
-function HomeNews() {
-  const { data: news, isLoading, error, refetch } = useQuery<NewsArticle[]>({
-    queryKey: ["/api/news"],
-    retry: 3,
-    retryDelay: 1000,
-  });
-
-  const formatDate = (date: string | Date) => {
-    return new Date(date).toLocaleDateString('zh-CN', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  if (error) {
-    return (
-      <section id="news" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-6">新闻动态</h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto">了解AI玩具行业最新资讯和蓝豆包公司动态</p>
-          </div>
-
-          <div className="text-center py-16">
-            <div className="max-w-md mx-auto">
-              <AlertCircle className="h-16 w-16 text-red-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">加载失败</h3>
-              <p className="text-slate-600 mb-8">
-                暂时无法加载新闻内容，请检查网络连接后重试。
-              </p>
-              <Button
-                onClick={() => refetch()}
-                className="bg-blue-primary text-white hover:bg-blue-deep px-6 py-3 rounded-full font-semibold"
-              >
-                <RefreshCw className="mr-2 h-4 w-4" />
-                重新加载
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section id="news" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-primary mb-6">新闻动态</h2>
-          <div className="w-24 h-1 bg-blue-primary mx-auto mb-6"></div>
-          <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-            了解AI玩具行业最新资讯和蓝豆包公司动态，掌握智能玩具发展趋势
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          {isLoading ? (
-            Array.from({ length: 3 }).map((_, index) => (
-              <Card key={index} className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg">
-                <Skeleton className="w-full h-48" />
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <Skeleton className="h-4 w-20" />
-                    <Skeleton className="h-4 w-16" />
-                  </div>
-                  <Skeleton className="h-6 w-full" />
-                  <Skeleton className="h-16 w-full" />
-                  <Skeleton className="h-4 w-24" />
-                </CardContent>
-              </Card>
-            ))
-          ) : news && news.length > 0 ? (
-            news.slice(0, 3).map((article) => (
-              <Card key={article.id} className="bg-slate-50 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 bg-blue-primary text-white text-sm font-medium rounded-full">
-                      {article.category}
-                    </span>
-                  </div>
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center space-x-2 text-sm text-slate-500">
-                    <Calendar className="h-4 w-4" />
-                    <span>{formatDate(article.publishDate)}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-primary hover:text-blue-primary transition-colors cursor-pointer line-clamp-2">
-                    {article.title}
-                  </h3>
-                  <p className="text-secondary leading-relaxed line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                  <Button variant="link" className="p-0 h-auto text-blue-primary hover:text-blue-deep font-medium group-hover:translate-x-1 transition-transform">
-                    阅读更多 <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))
-          ) : (
-            <div className="col-span-full text-center py-16">
-              <div className="max-w-md mx-auto">
-                <Tag className="h-16 w-16 text-slate-400 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">暂无新闻</h3>
-                <p className="text-slate-600 mb-8">
-                  目前没有可显示的新闻资讯，请稍后再来查看。
-                </p>
-                <Button
-                  onClick={() => refetch()}
-                  variant="outline"
-                  className="border-blue-primary text-blue-primary hover:bg-blue-primary hover:text-white"
-                >
-                  <RefreshCw className="mr-2 h-4 w-4" />
-                  刷新
-                </Button>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {news && news.length > 3 && (
-          <div className="text-center mt-16">
-            <Button className="bg-blue-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-deep transition-all transform hover:scale-105">
-              查看更多新闻
-            </Button>
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -160,10 +21,10 @@ export default function Home() {
             {/* Left side - Content */}
             <div className="space-y-12 pl-[200px]">
               <div className="space-y-12">
-                <h1 className="text-[130px] font-bold leading-tight text-white" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>
+                <h1 className="text-[120px] font-bold leading-tight text-white" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>
                   Bluepebo
                 </h1>
-                <h2 className="text-[100px] font-bold leading-tight text-white" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>
+                <h2 className="text-[90px] font-bold leading-tight text-white" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>
                   蓝豆包AI
                 </h2>
                 <p className="text-[40px] font-bold leading-relaxed text-white/90 mt-16" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>
@@ -207,8 +68,8 @@ export default function Home() {
         <div className="container-fluid">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-24">
-              <h2 className="text-[70px] text-black font-bold text-slate-900 mb-8" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>关于我们</h2>
-              <p className="text-[28px] text-gray-700 text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              <h2 className="text-[60px] text-black font-bold text-slate-900 mb-4" style={{fontFamily: 'Telegraf, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'}}>关于我们</h2>
+              <p className="text-[25px] text-gray-600 text-slate-600 max-w-4xl mx-auto leading-relaxed">
                 蓝豆包成立于2024年，我们是一家专注于AI智能玩具的创新科技公司
               </p>
             </div>
@@ -296,7 +157,7 @@ export default function Home() {
                 </div>
                 <div className="p-10">
                   <h3 className="text-3xl font-bold mb-6 text-slate-900">蓝豆包AI语音陪伴玩偶</h3>
-                  <p className="text-[24px] text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-[22px] text-slate-600 mb-6 leading-relaxed">
                     集AI对话、情感陪伴、学习辅导于一体的智能机器人，是孩子最贴心的成长伙伴。
                     通过先进的自然语言处理技术，真正理解孩子的需求。
                   </p>
@@ -315,7 +176,7 @@ export default function Home() {
                 </div>
                 <div className="p-10">
                   <h3 className="text-3xl font-bold mb-6 text-slate-900">蓝豆包AI智能语音戒指</h3>
-                  <p className="text-[24px] text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-[22px] text-slate-600 mb-6 leading-relaxed">
                     蓝豆包AI戒指集成大模型语音助手、指纹解锁、AI手势控制与健康监测于一体，以私密骨传导技术和时尚外观，打造既智能又美观的日常穿戴设备。
                   </p>
                 </div>
@@ -333,11 +194,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* News Section with enhanced spacing */}
-      <div className="py-24 bg-white">
-        <HomeNews />
-      </div>
 
       <Footer />
     </div>
