@@ -22,7 +22,7 @@ export default function Header() {
     { path: "/about", label: "关于我们" },
     { path: "/products", label: "产品中心" },
     { path: "/services", label: "技术服务" },
-    { path: "/news", label: "新闻中心" },
+    { path: "/store", label: "在线电商" },
     { path: "/contact", label: "联系我们" },
     { path: "/join-us", label: "人才招聘" }
   ];
@@ -34,8 +34,8 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
-      <div className="w-full max-w-none px-6 sm:px-8 lg:px-12 xl:px-16">
+    <header className="bg-black shadow-sm sticky top-0 z-50 w-full">
+      <div className=" w-full max-w-none px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
           <Link href="/">
@@ -48,8 +48,8 @@ export default function Header() {
               <Link key={item.path} href={item.path}>
                 <span className={`font-medium transition-colors pb-1 cursor-pointer text-lg ${
                   isActive(item.path)
-                    ? "text-blue-primary border-b-2 border-blue-primary"
-                    : "text-slate-600 hover:text-blue-primary"
+                    ? "text-white border-b-2 border-blue-primary"
+                    : "text-yellow-400 hover:text-blue-primary"
                 }`}>
                   {item.label}
                 </span>
@@ -67,8 +67,8 @@ export default function Header() {
                   size="sm"
                   className={`rounded-full text-sm font-medium transition-all px-3 py-1 ${
                     currentLanguage === lang.code
-                      ? "bg-blue-primary text-white hover:bg-blue-deep"
-                      : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
+                      ? "bg-yellow-500 text-black hover:bg-black hover:text-yellow-500"
+                      : "text-black hover:text-yellow-500 hover:bg-transparent"
                   }`}
                   onClick={() => setCurrentLanguage(lang.code)}
                   title={lang.label}
@@ -97,8 +97,8 @@ export default function Header() {
                   <span
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer text-lg ${
                       isActive(item.path)
-                        ? "bg-blue-soft text-blue-primary"
-                        : "text-slate-600 hover:bg-slate-50 hover:text-blue-primary"
+                        ? "bg-yellow-500 text-black hover:bg-black hover:text-yellow-500"
+                      : "text-black hover:text-yellow-500 hover:bg-transparent"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -117,8 +117,8 @@ export default function Header() {
                     size="sm"
                     className={`flex-1 rounded-full text-sm font-medium transition-all ${
                       currentLanguage === lang.code
-                        ? "bg-blue-primary text-white hover:bg-blue-deep"
-                        : "text-slate-600 hover:text-blue-primary hover:bg-transparent"
+                        ? "bg-yellow-500 text-black hover:bg-black hover:text-yellow-500"
+                      : "text-black hover:text-yellow-500 hover:bg-transparent"
                     }`}
                     onClick={() => {
                       setCurrentLanguage(lang.code);
