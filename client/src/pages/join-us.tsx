@@ -22,7 +22,8 @@ import {
   TrendingUp,
   Award,
   Search,
-  Filter
+  Filter,
+  Book
 } from "lucide-react";
 import { useState } from "react";
 
@@ -31,30 +32,41 @@ export default function JoinUs() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const benefits = [
-    {
-      icon: Heart,
-      title: "五险一金",
-      description: "完善的社会保险和住房公积金"
-    },
-    {
-      icon: Coffee,
-      title: "弹性工作",
-      description: "灵活的工作时间和远程办公"
-    },
+
     {
       icon: GraduationCap,
-      title: "学习成长",
-      description: "丰富的培训机会和学习资源"
+      title: "战略清晰",
+      description: "创始团队经验丰富，指引企业稳步前行"
     },
     {
       icon: Star,
-      title: "股权激励",
-      description: "优秀员工享有股权激励计划"
+      title: "氛围温暖",
+      description: "平等轻松的文化，让你安心如家"
+    },
+    {
+      icon: Book,
+      title: "产品专注",
+      description: "精益求精，打造高质量产品体验"
     },
     {
       icon: Globe,
       title: "国际视野",
       description: "参与国际项目的机会"
+    },
+    {
+      icon: TrendingUp,
+      title: "成长机会",
+      description: "系统培训与学习资源，持续提升能力"
+    },
+    {
+      icon: Coffee,
+      title: "人文关怀",
+      description: "灵活办公、节日礼物、团建活动让工作更有温度"
+    },
+    {
+      icon: Heart,
+      title: "五险一金",
+      description: "完善的社会保险和住房公积金"
     },
     {
       icon: Shield,
@@ -63,7 +75,15 @@ export default function JoinUs() {
     }
   ];
 
-  const departments = ["全部", "算法研发", "产品设计", "硬件工程", "市场营销", "商务拓展", "运营管理"];
+  const departments = [
+    "全部",
+    "算法研发",
+    "产品设计",
+    "硬件工程",
+    "市场营销",
+    "商务拓展",
+    "运营管理"
+  ];
 
   const jobs = [
     {
@@ -221,8 +241,81 @@ export default function JoinUs() {
       ],
       tags: ["B2B销售", "商务拓展", "客户管理", "谈判"],
       urgent: true
+    },
+    {
+      id: 7,
+      title: "软件工程师",
+      department: "算法研发",
+      location: "深圳",
+      type: "全职",
+      experience: "1-3年",
+      salary: "18-28K",
+      description: "参与AI玩具核心功能的系统开发与维护。",
+      requirements: [
+        "计算机相关专业本科及以上学历",
+        "掌握至少一种后端语言（如 Python / Node.js）",
+        "了解数据库、API 和版本控制工具",
+        "具备良好的团队协作与沟通能力"
+      ],
+      responsibilities: [
+        "开发和维护平台核心模块",
+        "协助算法团队接口对接和数据处理",
+        "优化系统性能与可扩展性",
+        "配合前端进行接口联调"
+      ],
+      tags: ["后端开发", "Node.js", "API", "系统设计"],
+      urgent: false
+    },
+    {
+      id: 8,
+      title: "动画制作设计师",
+      department: "产品设计",
+      location: "深圳",
+      type: "全职",
+      experience: "2-4年",
+      salary: "15-25K",
+      description: "负责AI玩具相关动画角色、场景、剧情的设计与输出。",
+      requirements: [
+        "动画、数字媒体、视觉传达等相关专业",
+        "熟练掌握AE、Flash、Blender或其他动画制作工具",
+        "有独立制作项目经验者优先",
+        "具备创新力与团队协作能力"
+      ],
+      responsibilities: [
+        "设计和制作2D/3D动画内容",
+        "与产品团队共同定义角色风格和动画流程",
+        "参与剧本构思与节奏控制",
+        "持续优化角色互动体验"
+      ],
+      tags: ["动画设计", "2D动画", "角色创作", "AE"],
+      urgent: false
+    },
+    {
+      id: 9,
+      title: "直播运营专员",
+      department: "运营管理",
+      location: "深圳",
+      type: "全职",
+      experience: "1-3年",
+      salary: "10-18K",
+      description: "负责公司直播内容策划与账号运营，扩大品牌影响力。",
+      requirements: [
+        "熟悉主流直播平台和短视频平台运营机制",
+        "具备直播策划、脚本撰写、执行能力",
+        "有数据分析、互动引导经验者优先",
+        "具备良好的内容创意和表达能力"
+      ],
+      responsibilities: [
+        "策划直播活动与内容脚本",
+        "维护账号内容与粉丝互动",
+        "跟进直播效果数据并优化",
+        "与产品、设计协作提升内容质量"
+      ],
+      tags: ["直播", "内容运营", "短视频", "活动策划"],
+      urgent: false
     }
   ];
+
 
   const filteredJobs = jobs.filter(job => {
     const matchesDepartment = selectedDepartment === "全部" || job.department === selectedDepartment;
@@ -233,32 +326,32 @@ export default function JoinUs() {
   });
 
   return (
-    <div className="min-h-screen bg-blue-900">
+    <div className="min-h-screen bg-orange-700 text-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-800 to-blue-900 py-fluid-3xl">
+      <section className="bg-black from-blue-800 to-blue-900 py-fluid-3xl">
         <div className="container-fluid">
           <div className="text-center text-white max-w-4xl mx-auto">
-            <h1 className="text-fluid-5xl font-bold mb-fluid-lg">加入蓝豆包</h1>
-            <p className="text-fluid-xl text-blue-100 leading-relaxed mb-fluid-xl">
+            <h1 className="text-fluid-5xl font-bold text-yellow-400 mb-6">加入蓝豆包</h1>
+            <p className="text-lg md:text-xl text-slate-100 max-w-4xl mx-auto mb-6">
               与我们一起创造AI玩具的未来，让科技更好地服务于儿童教育和成长
             </p>
 
             <div className="grid-fluid-3 gap-fluid-lg">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-fluid-lg">
                 <Users className="h-8 w-8 mx-auto mb-fluid-sm" />
-                <div className="text-fluid-2xl font-bold">200+</div>
+                <div className="text-fluid-2xl text-yellow-500 font-bold">15+</div>
                 <div className="text-blue-100 text-fluid-sm">团队成员</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-fluid-lg">
                 <TrendingUp className="h-8 w-8 mx-auto mb-fluid-sm" />
-                <div className="text-fluid-2xl font-bold">500%</div>
+                <div className="text-fluid-2xl text-yellow-500 font-bold">200%</div>
                 <div className="text-blue-100 text-fluid-sm">年增长率</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-fluid-lg">
                 <Award className="h-8 w-8 mx-auto mb-fluid-sm" />
-                <div className="text-fluid-2xl font-bold">10+</div>
+                <div className="text-fluid-2xl text-yellow-500 font-bold">2+</div>
                 <div className="text-blue-100 text-fluid-sm">行业奖项</div>
               </div>
             </div>
@@ -274,11 +367,11 @@ export default function JoinUs() {
             <p className="text-fluid-xl text-secondary max-w-prose mx-auto">优厚的福利待遇和广阔的发展空间</p>
           </div>
 
-          <div className="grid-fluid-3 gap-fluid-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-fluid-lg">
             {benefits.map((benefit, index) => (
               <Card key={index} className="card-responsive bg-gradient-to-br from-blue-soft to-white border-0">
                 <CardContent className="text-center p-fluid-lg">
-                  <div className="w-16 h-16 bg-blue-primary rounded-full flex items-center justify-center mx-auto mb-fluid-md">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <benefit.icon className="text-white h-8 w-8" />
                   </div>
                   <h3 className="text-fluid-lg font-semibold text-primary mb-fluid-sm">{benefit.title}</h3>
@@ -291,12 +384,12 @@ export default function JoinUs() {
       </section>
 
       {/* Job Search */}
-      <section className="py-fluid-lg bg-slate-100">
+      <section className="py-fluid-lg bg-black">
         <div className="container-fluid">
           <div className="flex-responsive items-center gap-fluid-md">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-yellow-600 h-5 w-5" />
               <Input
                 type="text"
                 placeholder="搜索职位..."
@@ -308,7 +401,7 @@ export default function JoinUs() {
 
             {/* Department Filter */}
             <div className="flex items-center gap-fluid-sm">
-              <Filter className="text-slate-500 h-5 w-5" />
+              <Filter className="text-yellow-500 h-5 w-5" />
               <div className="flex gap-fluid-xs overflow-x-auto">
                 {departments.map((dept) => (
                   <Button
@@ -388,16 +481,6 @@ export default function JoinUs() {
                           ))}
                         </div>
                       </div>
-
-                      {/* Action Button */}
-                      <div className="flex flex-col justify-center">
-                        <Button className="bg-blue-primary text-white hover:bg-blue-deep btn-responsive mb-fluid-sm">
-                          立即申请
-                        </Button>
-                        <Button variant="outline" className="border-blue-primary text-blue-primary hover:bg-blue-primary hover:text-white btn-responsive">
-                          查看详情
-                        </Button>
-                      </div>
                     </div>
 
                     {/* Expandable Details */}
@@ -439,84 +522,22 @@ export default function JoinUs() {
         </div>
       </section>
 
-      {/* Application Form */}
-      <section className="py-fluid-3xl bg-gradient-to-br from-slate-100 to-blue-soft">
-        <div className="container-fluid">
-          <div className="max-w-3xl mx-auto">
-            <Card className="card-responsive">
-              <CardContent className="p-fluid-2xl">
-                <div className="text-center mb-fluid-xl">
-                  <h2 className="text-fluid-3xl font-bold text-primary mb-fluid-md">在线申请</h2>
-                  <p className="text-fluid-lg text-secondary">没有找到合适的职位？发送简历给我们，我们会主动联系您</p>
-                </div>
-
-                <form className="space-y-fluid-lg">
-                  <div className="grid md:grid-cols-2 gap-fluid-lg">
-                    <div>
-                      <label className="block text-fluid-base font-medium text-primary mb-fluid-sm">姓名 *</label>
-                      <Input placeholder="请输入您的姓名" className="rounded-lg" />
-                    </div>
-                    <div>
-                      <label className="block text-fluid-base font-medium text-primary mb-fluid-sm">电话 *</label>
-                      <Input placeholder="请输入您的电话" className="rounded-lg" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-fluid-base font-medium text-primary mb-fluid-sm">邮箱 *</label>
-                    <Input type="email" placeholder="请输入您的邮箱" className="rounded-lg" />
-                  </div>
-
-                  <div>
-                    <label className="block text-fluid-base font-medium text-primary mb-fluid-sm">期望职位</label>
-                    <Input placeholder="请输入您期望的职位" className="rounded-lg" />
-                  </div>
-
-                  <div>
-                    <label className="block text-fluid-base font-medium text-primary mb-fluid-sm">自我介绍 *</label>
-                    <Textarea
-                      placeholder="请简单介绍您的经历和优势..."
-                      rows={6}
-                      className="rounded-lg resize-none"
-                    />
-                  </div>
-
-                  <div className="text-center">
-                    <Button className="bg-blue-primary text-white hover:bg-blue-deep btn-responsive">
-                      <Zap className="mr-2 h-5 w-5" />
-                      提交申请
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Info */}
-      <section className="py-fluid-2xl bg-gradient-to-br from-blue-primary to-blue-deep">
-        <div className="container-fluid">
-          <div className="text-center text-white max-w-2xl mx-auto">
-            <h3 className="text-fluid-2xl font-bold mb-fluid-md">联系我们</h3>
-            <p className="text-blue-100 mb-fluid-lg text-fluid-base">
-              如果您对职位有任何问题，欢迎随时联系我们的人力资源团队
-            </p>
-            <div className="flex-responsive justify-center">
-              <div className="flex items-center gap-fluid-sm">
-                <MapPin className="h-5 w-5" />
-                <span className="text-fluid-base">深圳市南山区科技园</span>
-              </div>
-              <div className="flex items-center gap-fluid-sm">
-                <span className="text-fluid-base">hr@landoubao.com</span>
-              </div>
-              <div className="flex items-center gap-fluid-sm">
-                <span className="text-fluid-base">0755-8888-0123</span>
+        <section className="py-fluid-2xl bg-gradient-to-br from-blue-primary to-blue-deep">
+          <div className="container-fluid">
+            <div className="text-center text-white max-w-2xl mx-auto">
+              <h3 className="text-fluid-4xl font-bold mb-6">联系我们</h3>
+              <p className="text-white mb-6 text-fluid-xl">
+                如果您对职位有任何问题，欢迎随时联系我们的人力资源团队
+              </p>
+              <div className="space-y-4 text-fluid-base text-white">
+                <div>地址：上海市·杨浦区 / 北京市·海淀区</div>
+                <div>电话：400-026-9568</div>
+                <div>邮箱：business@landoubao.com</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <Footer />
     </div>
