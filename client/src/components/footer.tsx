@@ -14,8 +14,7 @@ export default function Footer() {
           {/* 公司信息 */}
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <img src="/logo.jpeg" alt="蓝豆包 Logo" className="w-10 h-10 rounded" />
-              <span className="text-2xl font-semibold">蓝豆包</span>
+              <span className="text-2xl font-semibold">蓝豆包AI</span>
             </div>
             <p className="text-slate-300 leading-relaxed text-base max-w-prose">
               专业的AI智能玩具研发公司，致力于为孩子们创造更智能、更有趣的游戏体验。
@@ -28,7 +27,7 @@ export default function Footer() {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  alert("请扫描二维码关注我们的微信公众号：蓝豆包AI玩具");
+                  alert("暂无店铺和商品可点击的外部链接，店铺地址请扫描工具栏在线电商二维码");
                 }}
                 className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-400 transition-colors"
                 title="微信公众号"
@@ -36,9 +35,26 @@ export default function Footer() {
                 <MessageCircle className="text-white w-5 h-5" />
               </a>
 
+              {/* 小红书 */}
+              <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              alert("暂无链接，可在小红书搜索“蓝豆包AI”");
+            }}
+            className="w-10 h-10  rounded-full flex items-center justify-center hover:scale-105 transition"
+            title="小红书"
+          >
+            <img
+              src="/xiaohongshu.png"
+              alt="小红书"
+              className="w-10 h-10 rounded-full object-cover"
+            />
+          </a>
+
               {/* 淘宝 */}
               <a
-                href="https://shop.taobao.com/landoubao"
+                href="https://m.tb.cn/h.hj0QuWAB1Zqglu7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-400 transition-colors"
@@ -49,7 +65,7 @@ export default function Footer() {
 
               {/* 抖音 */}
               <a
-                href="https://www.douyin.com/user/landoubao"
+                href="https://v.douyin.com/uu6F88OY8Fg/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-black border border-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
