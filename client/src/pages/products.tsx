@@ -19,7 +19,6 @@ interface Product {
   description: string;
   price: string;
   image: string;
-  category: string;
   features: string[];
 }
 
@@ -42,7 +41,6 @@ export default function Products() {
     5. 不联网时仍然有AI功能；同类产品性价比最高。`,
         price: "429.00",
         image: "/p2.png",
-        category: "蓝豆包",
         features: ["语音交互", "情感识别", "学习能力", "安全材料"]
       },
       {
@@ -56,7 +54,6 @@ export default function Products() {
     5. 时尚美观的设计，使智能戒指在拥有诸多AI功能的同时依然是一个美观的饰品。`,
         price: "敬请期待",
         image: "/p3.png",
-        category: "戒指",
         features: ["指纹解锁", "骨传导技术", "手势控制", "健康监测"]
       },
       {
@@ -67,7 +64,6 @@ export default function Products() {
     开启电子宠物养成系的新玩法。`,
         price: "敬请期待",
         image: "/p4.png",
-        category: "智能宠物",
         features: ["灵活眼睛", "运动功能", "拍照识别", "情绪感知", "宠物养成"]
       }
     ];
@@ -167,17 +163,16 @@ export default function Products() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <CardContent className="p-6">
-                    <div className="mb-2">
-                      <span className="inline-block px-2 py-1 bg-blue-soft text-blue-primary text-xs font-medium rounded-full">
-                        {product.category}
-                      </span>
-                    </div>
-                    <h3 className="font-semibold text-lg text-slate-800 mb-2 group-hover:text-blue-primary transition-colors">
-                      {product.name}
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-4 line-clamp-2">
-                      {product.description}
-                    </p>
+                  <div className="mb-2">
+                    <span className="inline-block px-2 py-1 bg-blue-soft text-blue-primary text-xs font-medium rounded-full">
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-lg text-slate-800 mb-2 group-hover:text-yellow-600 transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-slate-600 text-sm mb-4 line-clamp-2">
+                    {product.description}
+                  </p>
 
                     {/* Features */}
                     <div className="mb-4">
@@ -196,9 +191,9 @@ export default function Products() {
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <span className="text-2xl font-bold text-blue-primary">¥{product.price}</span>
+                      <span className="text-2xl font-bold text-yellow-500">¥{product.price}</span>
                       <Button
-                        className="bg-blue-primary text-white hover:bg-blue-deep transition-colors rounded-full text-sm"
+                        className="text-[15px] bg-black text-yellow-500 hover:bg-yellow-400 hover:text-black rounded-none"
                         onClick={() => handleProductDetail(product)}
                       >
                         查看详情
@@ -237,9 +232,6 @@ export default function Products() {
                       className="w-full h-80 object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-blue-primary text-white">
-                        {selectedProduct.category}
-                      </Badge>
                     </div>
                   </div>
 
@@ -268,30 +260,6 @@ export default function Products() {
                 <div className="space-y-6">
                   {/* Price */}
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-3xl font-bold text-blue-primary">¥{selectedProduct.price}</span>
-                      <div className="flex items-center space-x-1">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star key={i} className="h-4 w-4 text-orange-400 fill-current" />
-                        ))}
-                        <span className="text-sm text-slate-600 ml-2">(4.9分)</span>
-                      </div>
-                    </div>
-                    <div className="flex space-x-3">
-                      {selectedProduct.price !== "N/A" && selectedProduct.price !== "敬请期待" ? (
-                        <Button className="flex-1 bg-blue-primary text-white hover:bg-blue-deep">
-                          <ShoppingCart className="mr-2 h-4 w-4" />
-                          立即购买
-                        </Button>
-                      ) : (
-                        <Button className="flex-1 bg-slate-400 text-white cursor-not-allowed" disabled>
-                          {selectedProduct.price === "N/A" ? "即将上市" : "敬请期待"}
-                        </Button>
-                      )}
-                      <Button variant="outline" className="px-4">
-                        <Heart className="h-4 w-4" />
-                      </Button>
-                    </div>
                   </div>
 
                   {/* Description */}

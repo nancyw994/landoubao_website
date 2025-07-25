@@ -62,21 +62,21 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="hidden lg:flex gap-12 xl:gap-16 items-center">
-            {navItems.map((item) =>
-              item.label === "在线电商" ? (
-                <PlatformDropdown key="dropdown" />
-              ) : (
-                <Link key={item.path} href={item.path}>
-                  <span className={`font-medium transition-colors pb-1 cursor-pointer text-lg ${
-                    isActive(item.path)
-                      ? "text-white border-b-2 border-blue-primary"
-                      : "text-yellow-400 hover:text-blue-primary"
-                  }`}>
-                    {item.label}
-                  </span>
-                </Link>
-              )
-            )}
+          {navItems.map((item) =>
+            item.label === "在线电商" ? (
+              <PlatformDropdown key="dropdown" isActive={isActive("/store")} />
+            ) : (
+              <Link key={item.path} href={item.path}>
+                <span className={`font-medium transition-colors pb-1 cursor-pointer text-lg ${
+                  isActive(item.path)
+                    ? "text-white border-b-2 border-blue-primary"
+                    : "text-yellow-400 hover:text-blue-primary"
+                }`}>
+                  {item.label}
+                </span>
+              </Link>
+            )
+          )}
           </nav>
 
 

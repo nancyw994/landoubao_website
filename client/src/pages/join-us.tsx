@@ -395,7 +395,7 @@ export default function JoinUs() {
                 placeholder="搜索职位..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 rounded-full border-slate-300"
+                className="pl-10 rounded-full border-slate-300 text-black"
               />
             </div>
 
@@ -411,8 +411,8 @@ export default function JoinUs() {
                     onClick={() => setSelectedDepartment(dept)}
                     className={`rounded-full whitespace-nowrap text-fluid-sm ${
                       selectedDepartment === dept
-                        ? "bg-blue-primary text-white hover:bg-blue-deep"
-                        : "border-slate-300 text-slate-600 hover:border-blue-primary hover:text-blue-primary"
+                        ? "bg-yellow-500 border-2 text-black hover:bg-yellow-400"
+                        : "border-slate-300 text-slate-600 hover:border-white hover:text-black"
                     }`}
                   >
                     {dept}
