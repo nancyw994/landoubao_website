@@ -149,7 +149,7 @@ export default function About() {
 
             <div className="flex justify-center items-center mt-20 mb-15">
               <img
-                src="/public/logo.jpg"
+                src="logo.jpg"
                 alt="创始人故事图片"
                 className="rounded-2xl shadow-md w-full max-w-md object-cover"
               />
