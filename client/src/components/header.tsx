@@ -33,25 +33,6 @@ export default function Header() {
     return false;
   };
 
-  const platforms = [
-    {
-      name: "微信",
-      type: "官方账号",
-      url: "#",
-      qr: "/qrcodes/wechat.png",
-      note: "关注公众号或联系客服",
-      status: "available"
-    },
-    {
-      name: "小红书",
-      type: "官方账号",
-      url: "#",
-      qr: "/qrcodes/xiaohongshu.png",
-      note: "暂无链接，可搜索“蓝豆包AI”",
-      status: "unavailable"
-    }
-  ];
-
   return (
     <header className="bg-black shadow-sm sticky top-0 z-50 w-full">
       <div className="w-full max-w-none px-6 sm:px-8 lg:px-12 xl:px-16">
@@ -67,7 +48,7 @@ export default function Header() {
               <PlatformDropdown key="dropdown" isActive={isActive("/store")} />
             ) : (
               <Link key={item.path} href={item.path}>
-                <span className={`font-medium transition-colors pb-1 cursor-pointer text-lg ${
+                <span className={`font-medium transition-colors pb-1 cursor-pointer text-sm ${
                   isActive(item.path)
                     ? "text-white border-b-2 border-blue-primary"
                     : "text-yellow-400 hover:text-blue-primary"
@@ -79,7 +60,6 @@ export default function Header() {
           )}
           </nav>
 
-
           {/* Language & Mobile Toggle */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex bg-slate-100 rounded-full p-1">
@@ -88,7 +68,7 @@ export default function Header() {
                   key={lang.code}
                   variant="ghost"
                   size="sm"
-                  className={`rounded-full text-sm font-medium transition-all px-3 py-1 ${
+                  className={`rounded-full text-xs font-medium transition-all px-3 py-1 ${
                     currentLanguage === lang.code
                       ? "bg-yellow-500 text-black hover:bg-black hover:text-yellow-500"
                       : "text-black hover:text-yellow-500 hover:bg-transparent"
@@ -104,7 +84,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden text-slate-600 p-2"
+              className="lg:hidden text-yellow-400 p-2 hover:text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -114,15 +94,15 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 py-4">
+          <div className="lg:hidden border-t border-slate-700 py-4">
             <nav className="space-y-1">
               {navItems.map((item) => (
                 <Link key={item.path} href={item.path}>
                   <span
-                    className={`block px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer text-lg ${
+                    className={`block px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer text-sm ${
                       isActive(item.path)
-                        ? "bg-yellow-500 text-black hover:bg-black hover:text-yellow-500"
-                        : "text-black hover:text-yellow-500 hover:bg-transparent"
+                        ? "bg-yellow-500 text-black hover:bg-yellow-400"
+                        : "text-yellow-400 hover:text-white hover:bg-slate-800"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -138,9 +118,9 @@ export default function Header() {
                     key={lang.code}
                     variant="ghost"
                     size="sm"
-                    className={`flex-1 rounded-full text-sm font-medium transition-all ${
+                    className={`flex-1 rounded-full text-xs font-medium transition-all ${
                       currentLanguage === lang.code
-                        ? "bg-yellow-500 text-black hover:bg-black hover:text-yellow-500"
+                        ? "bg-yellow-500 text-black hover:bg-yellow-400"
                         : "text-black hover:text-yellow-500 hover:bg-transparent"
                     }`}
                     onClick={() => {

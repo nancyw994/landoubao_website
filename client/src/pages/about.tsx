@@ -2,29 +2,47 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Heart, Lightbulb, Award, TrendingUp, Globe, Rocket, CheckCircle, Zap, Brain, Smile, GraduationCap } from "lucide-react";
-console.log({ Zap, GraduationCap, Heart, Target });
+import {
+  Users,
+  Target,
+  Heart,
+  Lightbulb,
+  Award,
+  TrendingUp,
+  Globe,
+  Rocket,
+  CheckCircle,
+  Zap,
+  GraduationCap
+} from "lucide-react";
 import { Link } from "wouter";
 
 export default function About() {
+  // Debug: Let's verify the icons are imported correctly
+  console.log("Icon imports:", { Zap, GraduationCap, Heart, Target });
+
   const values = [
     {
-      icon: Zap,
+      icon: "Zap",
+      iconComponent: Zap,
       title: "快速创新",
       description: "以敏锐的技术洞察力紧跟时代前沿，通过快速迭代为孩子们持续带来最先进的AI体验"
     },
     {
-      icon: GraduationCap,
+      icon: "GraduationCap",
+      iconComponent: GraduationCap,
       title: "教育赋能",
       description: "运用人工智能技术深度赋能传统教育，让学习过程变得更加智能化、个性化、趣味化"
     },
     {
-      icon: Heart,
+      icon: "Heart",
+      iconComponent: Heart,
       title: "情感陪伴",
       description: "以温暖的科技传递真挚的关爱，专注孩子的情感需求与心理健康，提供有温度的智能陪伴"
     },
     {
-      icon: Target,
+      icon: "Target",
+      iconComponent: Target,
       title: "关注成长",
       description: "始终专注于孩子的全面发展与个性培养，激发创造潜能而非单纯的应试能力提升"
     }
@@ -37,7 +55,7 @@ export default function About() {
       description: "蓝豆包团队正式成立，由一群热爱科技与教育的清北精英共同发起，致力于用AI点亮儿童成长之路。",
       achievements: [
         "团队正式组建，90%以上成员来自清华北大",
-        "确立“以儿童为中心”的产品理念",
+        "确立以“儿童为中心”的产品理念",
         "完成核心技术架构设计"
       ]
     },
@@ -74,10 +92,10 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "90%", label: "清华北大顶尖人才", icon: Users },
-    { number: "5年", label: "专注AI教育领域", icon: Target },
-    { number: "5个国家", label: "1000+ 家庭", icon: Globe },
-    { number: "企业级", label: "AI技术解决方案", icon: Rocket }
+    { number: "90%", label: "清华北大顶尖人才", icon: "Users", iconComponent: Users },
+    { number: "5年", label: "专注AI教育领域", icon: "Target", iconComponent: Target },
+    { number: "5个国家", label: "1000+ 家庭", icon: "Globe", iconComponent: Globe },
+    { number: "企业级", label: "AI技术解决方案", icon: "Rocket", iconComponent: Rocket }
   ];
 
   return (
@@ -93,13 +111,21 @@ export default function About() {
               蓝豆包成立于2024年，由90%清华北大顶尖人才组成的专业团队创立。我们既是在人工智能领域深耕多年的技术专家，更是对儿童教育怀有深度思考的教育实践者。致力于用前沿科技重新定义儿童学习体验，用温暖陪伴守护每一个纯真童年。
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white border border-white/20">
-                  <stat.icon className="h-6 w-6 text-yellow-400 mx-auto mb-2" />
-                  <div className="text-lg font-bold text-yellow-400">{stat.number}</div>
-                  <div className="text-sm mt-1">{stat.label}</div>
-                </div>
-              ))}
+              {stats.map((stat, index) => {
+                const IconComponent = stat.iconComponent;
+                console.log(`Rendering stat ${index}:`, stat.label, "Icon:", IconComponent);
+                return (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white border border-white/20">
+                    {IconComponent ? (
+                      <IconComponent className="h-6 w-6 text-yellow-400 mx-auto mb-2" />
+                    ) : (
+                      <div className="h-6 w-6 bg-yellow-400 rounded mx-auto mb-2"></div>
+                    )}
+                    <div className="text-lg font-bold text-yellow-400">{stat.number}</div>
+                    <div className="text-sm mt-1">{stat.label}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -209,23 +235,28 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values Section - FIXED */}
       <section className="py-fluid-3xl bg-white">
         <div className="container-fluid">
           <div className="text-center mb-fluid-2xl">
             <h2 className="text-fluid-3xl font-bold text-primary mb-10">我们的价值观</h2>
-            <p className="text-fluid-xl text-secondary max-w-prose mx-auto">引领我们前行的核心信念与行为准则</p>
+            <p className="text-fluid-lg text-secondary max-w-prose mx-auto mb-10">引领我们前行的核心信念与行为准则</p>
           </div>
 
-          <div className="grid-fluid-4 gap-fluid-xl">
+          <div className="grid-fluid-4 gap-fluid-xl mb-10">
           {values.map((value, index) => {
-            const Icon = value.icon;
+            const IconComponent = value.iconComponent;
+            console.log(`Rendering value ${index}:`, value.title, "Icon:", IconComponent);
             return (
               <div key={index} className="text-center space-y-fluid-md group">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-primary to-purple-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                  <Icon className="text-white h-8 w-8" />
+                <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform mb-4">
+                  {IconComponent ? (
+                    <IconComponent className="text-white h-8 w-8" />
+                  ) : (
+                    <div className="text-white text-xs">No Icon</div>
+                  )}
                 </div>
-                <h3 className="text-fluid-lg font-semibold text-primary">{value.title}</h3>
+                <h3 className="text-fluid-lg font-semibold text-primary mb-8">{value.title}</h3>
                 <p className="text-secondary text-fluid-base leading-relaxed">{value.description}</p>
               </div>
             );

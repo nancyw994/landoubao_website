@@ -1,5 +1,3 @@
-// This file should be saved as: client/src/pages/join-us.tsx
-
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,7 +30,6 @@ export default function JoinUs() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const benefits = [
-
     {
       icon: GraduationCap,
       title: "战略清晰",
@@ -90,7 +87,7 @@ export default function JoinUs() {
       id: 1,
       title: "高级AI算法工程师",
       department: "算法研发",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "3-5年",
       salary: "25-40K",
@@ -116,7 +113,7 @@ export default function JoinUs() {
       id: 2,
       title: "资深产品经理",
       department: "产品设计",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "5-8年",
       salary: "30-50K",
@@ -142,7 +139,7 @@ export default function JoinUs() {
       id: 3,
       title: "嵌入式软件工程师",
       department: "硬件工程",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "2-4年",
       salary: "20-30K",
@@ -168,7 +165,7 @@ export default function JoinUs() {
       id: 4,
       title: "UI/UX设计师",
       department: "产品设计",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "2-4年",
       salary: "15-25K",
@@ -194,7 +191,7 @@ export default function JoinUs() {
       id: 5,
       title: "市场营销专员",
       department: "市场营销",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "1-3年",
       salary: "12-20K",
@@ -220,7 +217,7 @@ export default function JoinUs() {
       id: 6,
       title: "商务拓展经理",
       department: "商务拓展",
-      location: "深圳",
+      location: "北京市",
       type: "全职",
       experience: "3-5年",
       salary: "20-35K",
@@ -246,7 +243,7 @@ export default function JoinUs() {
       id: 7,
       title: "软件工程师",
       department: "算法研发",
-      location: "深圳",
+      location: "北京市",
       type: "全职",
       experience: "1-3年",
       salary: "18-28K",
@@ -270,7 +267,7 @@ export default function JoinUs() {
       id: 8,
       title: "动画制作设计师",
       department: "产品设计",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "2-4年",
       salary: "15-25K",
@@ -294,7 +291,7 @@ export default function JoinUs() {
       id: 9,
       title: "直播运营专员",
       department: "运营管理",
-      location: "深圳",
+      location: "北京",
       type: "全职",
       experience: "1-3年",
       salary: "10-18K",
@@ -316,7 +313,6 @@ export default function JoinUs() {
     }
   ];
 
-
   const filteredJobs = jobs.filter(job => {
     const matchesDepartment = selectedDepartment === "全部" || job.department === selectedDepartment;
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -333,25 +329,25 @@ export default function JoinUs() {
       <section className="bg-black from-blue-800 to-blue-900 py-fluid-3xl">
         <div className="container-fluid">
           <div className="text-center text-white max-w-4xl mx-auto">
-            <h1 className="text-fluid-5xl font-bold text-yellow-400 mb-6">加入蓝豆包</h1>
-            <p className="text-lg md:text-xl text-slate-100 max-w-4xl mx-auto mb-6">
+            <h1 className="text-5xl font-bold text-yellow-400 mb-6">加入蓝豆包</h1>
+            <p className="text-md md:text-xl text-slate-100 max-w-4xl mx-auto mb-12">
               与我们一起创造AI玩具的未来，让科技更好地服务于儿童教育和成长
             </p>
 
             <div className="grid-fluid-3 gap-fluid-lg">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-fluid-lg">
                 <Users className="h-8 w-8 mx-auto mb-fluid-sm" />
-                <div className="text-fluid-2xl text-yellow-500 font-bold">15+</div>
+                <div className="text-fluid-xl text-yellow-500 font-bold">15+</div>
                 <div className="text-blue-100 text-fluid-sm">团队成员</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-fluid-lg">
                 <TrendingUp className="h-8 w-8 mx-auto mb-fluid-sm" />
-                <div className="text-fluid-2xl text-yellow-500 font-bold">200%</div>
+                <div className="text-fluid-xl text-yellow-500 font-bold">200%</div>
                 <div className="text-blue-100 text-fluid-sm">年增长率</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-fluid-lg">
                 <Award className="h-8 w-8 mx-auto mb-fluid-sm" />
-                <div className="text-fluid-2xl text-yellow-500 font-bold">2+</div>
+                <div className="text-fluid-xl text-yellow-500 font-bold">2+</div>
                 <div className="text-blue-100 text-fluid-sm">行业奖项</div>
               </div>
             </div>
@@ -363,8 +359,8 @@ export default function JoinUs() {
       <section className="py-fluid-3xl bg-white">
         <div className="container-fluid">
           <div className="text-center mb-fluid-2xl">
-            <h2 className="text-fluid-3xl font-bold text-primary mb-fluid-md">为什么选择我们</h2>
-            <p className="text-fluid-xl text-secondary max-w-prose mx-auto">优厚的福利待遇和广阔的发展空间</p>
+            <h2 className="text-fluid-2xl font-bold text-primary mb-fluid-md">为什么选择我们</h2>
+            <p className="text-fluid-lg text-secondary max-w-prose mx-auto mb-16">优厚的福利待遇和广阔的发展空间</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-fluid-lg">
@@ -374,8 +370,8 @@ export default function JoinUs() {
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <benefit.icon className="text-white h-8 w-8" />
                   </div>
-                  <h3 className="text-fluid-lg font-semibold text-primary mb-fluid-sm">{benefit.title}</h3>
-                  <p className="text-secondary text-fluid-base">{benefit.description}</p>
+                  <h3 className="text-fluid-sm font-semibold text-primary mb-4">{benefit.title}</h3>
+                  <p className="text-secondary text-fluid-xs mb-6">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -428,8 +424,8 @@ export default function JoinUs() {
       <section className="py-fluid-3xl bg-white">
         <div className="container-fluid">
           <div className="text-center mb-fluid-2xl">
-            <h2 className="text-fluid-3xl font-bold text-primary mb-fluid-md">职位机会</h2>
-            <p className="text-fluid-xl text-secondary">找到适合你的职业发展机会</p>
+            <h2 className="text-fluid-2xl font-bold text-primary mb-fluid-md">职位机会</h2>
+            <p className="text-fluid-xl text-secondary mb-12">找到适合你的职业发展机会</p>
           </div>
 
           <div className="space-y-12">
@@ -443,12 +439,12 @@ export default function JoinUs() {
                         <div className="flex items-start justify-between mb-fluid-md">
                           <div>
                             <div className="flex items-center gap-fluid-sm mb-fluid-xs">
-                              <h3 className="text-fluid-2xl font-bold text-primary">{job.title}</h3>
+                              <h3 className="text-fluid-xl font-bold text-primary">{job.title}</h3>
                               {job.urgent && (
                                 <Badge className="bg-orange-accent text-white">急招</Badge>
                               )}
                             </div>
-                            <div className="flex flex-wrap items-center gap-fluid-sm text-secondary text-fluid-base">
+                            <div className="flex flex-wrap items-center gap-fluid-sm text-secondary text-fluid-sm mb-6">
                               <div className="flex items-center gap-fluid-xs">
                                 <Briefcase className="h-4 w-4" />
                                 <span>{job.department}</span>
@@ -469,11 +465,11 @@ export default function JoinUs() {
                           </div>
                         </div>
 
-                        <p className="text-secondary mb-fluid-md text-fluid-base leading-relaxed">
+                        <p className="text-secondary mb-4 text-fluid-sm leading-relaxed">
                           {job.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-fluid-xs mb-fluid-md">
+                        <div className="flex flex-wrap gap-fluid-xs mb-4">
                           {job.tags.map((tag, index) => (
                             <Badge key={index} variant="outline" className="text-blue-primary border-blue-primary">
                               {tag}
@@ -487,7 +483,7 @@ export default function JoinUs() {
                     <div className="mt-fluid-lg pt-fluid-lg border-t border-slate-200">
                       <div className="grid md:grid-cols-2 gap-fluid-lg">
                         <div>
-                          <h4 className="text-fluid-lg font-semibold text-primary mb-fluid-sm">岗位职责</h4>
+                          <h4 className="text-fluid-lg font-semibold text-primary mb-2">岗位职责</h4>
                           <ul className="space-y-fluid-xs">
                             {job.responsibilities.map((responsibility, index) => (
                               <li key={index} className="flex items-start gap-fluid-xs">
@@ -523,21 +519,21 @@ export default function JoinUs() {
       </section>
 
       {/* Contact Info */}
-        <section className="py-fluid-2xl bg-gradient-to-br from-blue-primary to-blue-deep">
-          <div className="container-fluid">
-            <div className="text-center text-white max-w-2xl mx-auto">
-              <h3 className="text-fluid-4xl font-bold mb-6">联系我们</h3>
-              <p className="text-white mb-6 text-fluid-xl">
-                如果您对职位有任何问题，欢迎随时联系我们的人力资源团队
-              </p>
-              <div className="space-y-4 text-fluid-base text-white">
-                <div>地址：上海市·杨浦区 / 北京市·海淀区</div>
-                <div>电话：400-026-9568</div>
-                <div>邮箱：business@landoubao.com</div>
-              </div>
+      <section className="py-fluid-2xl bg-gradient-to-br from-blue-primary to-blue-deep">
+        <div className="container-fluid">
+          <div className="text-center text-white max-w-2xl mx-auto">
+            <h3 className="text-fluid-2xl font-bold mb-6">联系我们</h3>
+            <p className="text-white mb-10 text-fluid-md">
+              如果您对职位有任何问题，欢迎随时联系我们的人力资源团队
+            </p>
+            <div className="space-y-4 text-fluid-sm text-white">
+              <div>地址：上海市·杨浦区 / 北京市·海淀区</div>
+              <div>电话：400-026-9568</div>
+              <div>邮箱：business@landoubao.com</div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       <Footer />
     </div>

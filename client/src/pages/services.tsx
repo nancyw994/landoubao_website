@@ -62,7 +62,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="bg-black from-blue-50 to-blue-100 py-24">
         <div className="max-w-6xl mx-auto text-center px-6">
-          <h1 className="text-fluid-5xl font-bold text-yellow-400 mb-6">
+          <h1 className="text-5xl font-bold text-yellow-400 mb-6">
             企业级AI技术服务
           </h1>
           <p className="text-lg md:text-xl text-slate-100 max-w-4xl mx-auto">
@@ -96,11 +96,11 @@ export default function Services() {
                   <div className="w-14 h-14 bg-orange-accent rounded-full flex items-center justify-center">
                     <service.icon className="text-white h-7 w-7" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-yellow-400">
+                  <h3 className="text-xl font-semibold text-yellow-400">
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-yellow-400 text-base leading-relaxed">
+                <p className="text-yellow-400 text-sm leading-relaxed">
                   {service.description}
                 </p>
                 <div className="space-y-3">

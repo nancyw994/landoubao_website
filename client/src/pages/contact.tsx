@@ -14,13 +14,13 @@ export default function Contact() {
     {
       icon: Phone,
       title: "联系电话",
-      details: ["客服热线：400-026-9568"],
+      details: ["400-026-9568"],
       color: "text-green-500"
     },
     {
       icon: Mail,
       title: "邮箱地址",
-      details: ["商务合作：business@landoubao.com"],
+      details: ["business@landoubao.com"],
       color: "text-orange-accent"
     },
     {
@@ -50,7 +50,7 @@ export default function Contact() {
       <section className="bg-black from-blue-soft to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-fluid-5xl font-bold text-yellow-400 mb-6">联系我们</h1>
+            <h1 className="text-5xl font-bold text-yellow-400 mb-6">联系我们</h1>
             <p className="text-lg md:text-xl text-slate-100 max-w-4xl mx-auto">
               欢迎联系蓝豆包团队，我们期待与您探讨AI玩具的无限可能，为您提供专业的产品和服务。
             </p>
@@ -68,7 +68,7 @@ export default function Contact() {
                   <div className={`w-16 h-16 ${info.color.replace('text-', 'bg-')}/10 rounded-full flex items-center justify-center mx-auto`}>
                     <info.icon className={`h-8 w-8 ${info.color}`} />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800">{info.title}</h3>
+                  <h3 className="text-md font-semibold text-slate-800">{info.title}</h3>
                   <div className="space-y-1">
                     {info.details.map((detail, idx) => (
                       <p key={idx} className="text-slate-600">{detail}</p>

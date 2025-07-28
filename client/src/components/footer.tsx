@@ -13,15 +13,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start justify-between">
           {/* 公司信息 */}
           <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <span className="text-2xl font-semibold">蓝豆包AI</span>
+            <div className="flex items-center gap-4 pl-10">
+              <span className="text-md font-semibold">蓝豆包AI</span>
             </div>
-            <p className="text-slate-300 leading-relaxed text-base max-w-prose">
+            <p className="text-slate-300 leading-relaxed text-sm max-w-prose pl-10">
               专业的AI智能玩具研发公司，致力于为孩子们创造更智能、更有趣的游戏体验。
             </p>
 
             {/* 平台图标 */}
-            <div className="flex gap-3 flex-wrap">
+            <div className="flex gap-3 flex-wrap pl-10">
               {/* 微信 */}
               <a
                 href="#"
@@ -77,21 +77,21 @@ export default function Footer() {
           </div>
 
           {/* 联系我们 */}
-          <div className="space-y-6 text-center md:text-left">
-            <h3 className="text-lg font-semibold">联系我们</h3>
+          <div className="space-y-6 text-center md:text-left pl-24">
+            <h3 className="text-mdfont-semibold">联系我们</h3>
             <div className="space-y-3 text-slate-300 text-base">
-              <div className="flex items-start justify-center md:justify-start gap-2">
+              <div className="flex items-start justify-center md:justify-start gap-2 text-sm">
                 <MapPin className="text-blue-300 h-5 w-5 mt-1 flex-shrink-0" />
                 <div>
                   <div>上海市 杨浦区</div>
                   <div>北京市 中关村</div>
                 </div>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-sm">
                 <Phone className="text-blue-300 h-5 w-5 flex-shrink-0" />
                 <span>400-026-9568</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-sm">
                 <Mail className="text-blue-300 h-5 w-5 flex-shrink-0" />
                 <span>business@landoubao.com</span>
               </div>
@@ -99,13 +99,13 @@ export default function Footer() {
           </div>
 
           {/* 快速链接 */}
-          <div className="space-y-6 text-center md:text-left">
-            <h3 className="text-lg font-semibold">快速链接</h3>
+          <div className="space-y-6 text-center md:text-left pl-20">
+            <h3 className="text-md font-semibold">快速链接</h3>
             <div className="space-y-2">
-              <a href="/store" className="block text-slate-300 hover:text-white transition-colors text-base">技术服务</a>
-              <a href="/products" className="block text-slate-300 hover:text-white transition-colors text-base">产品中心</a>
-              <a href="/join-us" className="block text-slate-300 hover:text-white transition-colors text-base">加入我们</a>
-              <a href="/contact" className="block text-slate-300 hover:text-white transition-colors text-base">联系我们</a>
+              <a href="/store" className="block text-slate-300 hover:text-white transition-colors text-sm">技术服务</a>
+              <a href="/products" className="block text-slate-300 hover:text-white transition-colors text-sm">产品中心</a>
+              <a href="/join-us" className="block text-slate-300 hover:text-white transition-colors text-sm">加入我们</a>
+              <a href="/contact" className="block text-slate-300 hover:text-white transition-colors text-sm">联系我们</a>
             </div>
           </div>
         </div>

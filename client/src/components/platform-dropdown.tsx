@@ -19,7 +19,7 @@ export default function PlatformDropdown({ isActive }: { isActive: boolean }) {
       onMouseLeave={() => setShowDropdown(false)}
     >
       <button
-        className={`flex items-center font-medium transition-colors pb-1 cursor-pointer text-lg ${
+        className={`flex items-center font-medium transition-colors pb-1 cursor-pointer text-sm ${
           isActive
             ? "text-white border-b-2 border-blue-primary"
             : "text-yellow-400 hover:text-blue-primary"

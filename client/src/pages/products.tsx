@@ -139,7 +139,7 @@ export default function Products() {
       <section className="bg-black from-blue-50 via-indigo-50 to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-fluid-5xl font-bold text-yellow-400 mb-6">产品中心</h1>
+            <h1 className="text-5xl font-bold text-yellow-400 mb-6">产品中心</h1>
             <p className="text-xl text-white max-w-5xl mx-auto leading-relaxed">
               探索我们全系列的AI智能玩具产品，每一款都融合了最新的人工智能技术，为孩子们带来前所未有的互动体验。
             </p>
@@ -362,7 +362,7 @@ export default function Products() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">常见问题</h2>
-            <p className="text-lg text-slate-600">关于我们产品的常见疑问解答</p>
+            <p className="text-xl text-slate-600">关于我们产品的常见疑问解答</p>
           </div>
 
           <div className="space-y-4">
